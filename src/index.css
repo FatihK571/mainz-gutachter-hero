@@ -154,6 +154,8 @@ All colors MUST be HSL.
     scroll-padding-top: 4rem;
     overflow-x: hidden;
     max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   @media (min-width: 768px) {
@@ -166,11 +168,32 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     overflow-x: hidden;
     max-width: 100vw;
+    /* iOS safe area support */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
   
   #root {
     overflow-x: hidden;
     max-width: 100vw;
+  }
+  
+  /* Improve touch targets for mobile */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+  
+  /* Prevent iOS zoom on input focus */
+  @media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      font-size: 16px;
+    }
   }
 }
 
@@ -232,11 +255,21 @@ All colors MUST be HSL.
   /* Hero-specific typography */
   .hero-headline {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight;
+    /* Better readability on mobile */
+    @media (max-width: 640px) {
+      font-size: clamp(1.75rem, 8vw, 3rem);
+      line-height: 1.2;
+    }
   }
   
   .hero-subheadline {
     @apply text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-muted-foreground/90;
     max-width: 90%;
+    /* Better readability on mobile */
+    @media (max-width: 640px) {
+      font-size: clamp(0.95rem, 4vw, 1.125rem);
+      line-height: 1.6;
+    }
   }
 
   @media (min-width: 640px) {
@@ -256,6 +289,10 @@ All colors MUST be HSL.
   /* Card system */
   .card {
     @apply bg-card rounded-xl p-6 md:p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-lg)] transition-all duration-300;
+    /* Touch-friendly spacing on mobile */
+    @media (max-width: 640px) {
+      padding: 1.25rem;
+    }
   }
   
   .card-interactive {
