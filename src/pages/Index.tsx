@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2 } from "lucide-react";
+import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Star } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
 
@@ -393,6 +393,72 @@ const Index = () => {
                       <span className="text-sm font-medium text-foreground">15+ Jahre Erfahrung</span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-gradient-to-br from-primary-light/20 via-background to-primary-light/10 py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Das sagen unsere Kunden
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Echte Erfahrungen von Menschen, denen wir helfen durften
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Testimonial 1 */}
+              <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-md)] border border-border">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-foreground leading-relaxed mb-6 italic">
+                  "Schnell und professionell – hat mir sehr geholfen nach meinem Unfall."
+                </p>
+                <div className="border-t border-border pt-4">
+                  <p className="font-semibold text-foreground">Sandra Müller</p>
+                  <p className="text-sm text-muted-foreground">Mainz</p>
+                </div>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-md)] border border-border">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-foreground leading-relaxed mb-6 italic">
+                  "Unabhängige Beratung ohne Druck – genau das, was ich nach dem Unfall brauchte."
+                </p>
+                <div className="border-t border-border pt-4">
+                  <p className="font-semibold text-foreground">Thomas Weber</p>
+                  <p className="text-sm text-muted-foreground">Wiesbaden</p>
+                </div>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-md)] border border-border">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                  ))}
+                </div>
+                <p className="text-foreground leading-relaxed mb-6 italic">
+                  "Kompetent, fair und persönlich – ich würde jederzeit wieder hier hingehen."
+                </p>
+                <div className="border-t border-border pt-4">
+                  <p className="font-semibold text-foreground">Anna Schmidt</p>
+                  <p className="text-sm text-muted-foreground">Frankfurt</p>
                 </div>
               </div>
             </div>
