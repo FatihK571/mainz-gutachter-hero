@@ -47,6 +47,7 @@ All colors MUST be HSL.
     --shadow-sm: 0 2px 8px hsl(215 25% 15% / 0.06);
     --shadow-md: 0 4px 16px hsl(215 25% 15% / 0.08);
     --shadow-lg: 0 8px 24px hsl(215 25% 15% / 0.12);
+    --shadow-xl: 0 12px 32px hsl(215 25% 15% / 0.16);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -116,7 +117,57 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Hover transforms for interactive elements */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out;
+  }
+  
+  .hover-scale:hover {
+    @apply scale-[1.02];
+  }
+
+  /* Icon rotation on hover */
+  .icon-rotate-hover {
+    @apply transition-transform duration-300 ease-out;
+  }
+  
+  .icon-rotate-hover:hover {
+    @apply rotate-6;
+  }
+
+  /* Stagger animation delays */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
   }
 }

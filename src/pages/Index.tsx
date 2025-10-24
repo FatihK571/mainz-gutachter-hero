@@ -8,7 +8,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--hero-gradient-start))] to-[hsl(var(--hero-gradient-end))]">
       {/* Hero Section */}
-      <section id="hero" className="container mx-auto px-4 py-16 md:py-24">
+      <section id="hero" className="container mx-auto px-4 py-20 md:py-28">
+        <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in">
@@ -50,14 +51,14 @@ const Index = () => {
               <Button 
                 variant="hero" 
                 size="lg"
-                className="text-base font-semibold"
+                className="text-base font-semibold hover-lift"
               >
                 Jetzt Beratung anfordern
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="text-base font-semibold border-2"
+                className="text-base font-semibold border-2 hover-lift"
               >
                 Kostenlos anrufen
               </Button>
@@ -109,12 +110,15 @@ const Index = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Services Section */}
-      <section id="leistungen" className="container mx-auto px-4 pb-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+      <section id="leistungen" className="bg-background py-20 md:py-28">
+        <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
             Unsere Leistungen
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -122,13 +126,13 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {/* Card 1: Unfallgutachten */}
-          <div className="group bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow duration-300">
-            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors">
-              <ClipboardList className="w-7 h-7 text-accent" />
+          <div className="group bg-card rounded-xl p-6 md:p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-lg)] transition-all duration-300 hover-scale">
+            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+              <ClipboardList className="w-7 h-7 text-accent icon-rotate-hover" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-tight">
               Unfallgutachten
             </h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -137,11 +141,11 @@ const Index = () => {
           </div>
 
           {/* Card 2: Fahrzeugbewertung */}
-          <div className="group bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow duration-300">
-            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors">
-              <BadgeEuro className="w-7 h-7 text-accent" />
+          <div className="group bg-card rounded-xl p-6 md:p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-lg)] transition-all duration-300 hover-scale animate-fade-in animate-delay-100">
+            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+              <BadgeEuro className="w-7 h-7 text-accent icon-rotate-hover" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-tight">
               Fahrzeugbewertung
             </h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -150,11 +154,11 @@ const Index = () => {
           </div>
 
           {/* Card 3: Versicherungsansprüche */}
-          <div className="group bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow duration-300">
-            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors">
-              <FileText className="w-7 h-7 text-accent" />
+          <div className="group bg-card rounded-xl p-6 md:p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-lg)] transition-all duration-300 hover-scale animate-fade-in animate-delay-200">
+            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+              <FileText className="w-7 h-7 text-accent icon-rotate-hover" />
             </div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3 leading-tight">
               Versicherungsansprüche
             </h3>
             <p className="text-muted-foreground leading-relaxed">
@@ -162,14 +166,16 @@ const Index = () => {
             </p>
           </div>
         </div>
+        </div>
+        </div>
       </section>
 
       {/* Credibility Section */}
-      <section className="bg-primary-light/30 py-20">
+      <section className="bg-gradient-to-br from-accent/5 via-background to-accent/3 py-20 md:py-28 border-t border-border/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Warum Sie uns wählen sollten
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -179,11 +185,11 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
               {/* Point 1: Erfahrung */}
-              <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Award className="w-6 h-6 text-accent" />
+              <div className="flex gap-4 items-start group">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/25 transition-colors">
+                  <Award className="w-6 h-6 text-accent icon-rotate-hover" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Langjährige Erfahrung</h3>
@@ -194,52 +200,52 @@ const Index = () => {
               </div>
 
               {/* Point 2: Regional */}
-              <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-accent" />
+              <div className="flex gap-4 items-start group">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/25 transition-colors">
+                  <MapPin className="w-6 h-6 text-accent icon-rotate-hover" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Mainz & Umgebung</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Vor-Ort-Service in der gesamten Region – schnell und unkompliziert
                   </p>
                 </div>
               </div>
 
               {/* Point 3: Unabhängig */}
-              <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Scale className="w-6 h-6 text-accent" />
+              <div className="flex gap-4 items-start group">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/25 transition-colors">
+                  <Scale className="w-6 h-6 text-accent icon-rotate-hover" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Vollkommen unabhängig</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Neutral und ohne Werkstattbindung – nur Ihr Interesse zählt
                   </p>
                 </div>
               </div>
 
               {/* Point 4: Schnell */}
-              <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-accent" />
+              <div className="flex gap-4 items-start group">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/25 transition-colors">
+                  <Clock className="w-6 h-6 text-accent icon-rotate-hover" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Schnelle Bearbeitung</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     24-Stunden-Service und zügige Gutachtenerstellung
                   </p>
                 </div>
               </div>
 
               {/* Point 5: Persönlich */}
-              <div className="flex gap-4 items-start">
-                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MessageCircle className="w-6 h-6 text-accent" />
+              <div className="flex gap-4 items-start group">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/25 transition-colors">
+                  <MessageCircle className="w-6 h-6 text-accent icon-rotate-hover" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">Persönlich erreichbar</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Direkter Kontakt zu Ihrem Sachverständigen – keine Warteschleifen
                   </p>
                 </div>
@@ -250,10 +256,11 @@ const Index = () => {
       </section>
 
       {/* Process Timeline Section */}
-      <section className="container mx-auto px-4 py-24">
+      <section className="bg-background py-20 md:py-28">
+        <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
               So einfach geht's
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -326,26 +333,27 @@ const Index = () => {
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-12 md:mt-16">
             <Button 
               variant="hero" 
               size="lg"
-              className="text-base font-semibold"
+              className="text-base font-semibold hover-lift"
             >
               Jetzt Termin vereinbaren
             </Button>
           </div>
         </div>
+        </div>
       </section>
 
       {/* About Us Section */}
-      <section id="ueber-uns" className="bg-background py-24">
+      <section id="ueber-uns" className="bg-gradient-to-br from-primary-light/20 via-background to-primary-light/5 py-20 md:py-28 border-t border-border/50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
               {/* Image Left */}
               <div className="order-2 lg:order-1">
-                <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-lg)]">
+                <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)] transition-shadow duration-300">
                   <img 
                     src={founderImage} 
                     alt="Michael Schneider, Kfz-Sachverständiger und Geschäftsführer"
@@ -360,7 +368,7 @@ const Index = () => {
                   <span className="text-sm font-semibold text-accent uppercase tracking-wide">
                     Über uns
                   </span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4 leading-tight">
                     Ihr Partner für faire Gutachten
                   </h2>
                 </div>
@@ -402,11 +410,11 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-gradient-to-br from-primary-light/20 via-background to-primary-light/10 py-24">
+      <section className="bg-gradient-to-br from-primary-light/30 via-primary-light/10 to-background py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
                 Das sagen unsere Kunden
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -414,9 +422,9 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {/* Testimonial 1 */}
-              <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-md)] border border-border">
+              <div className="bg-card rounded-xl p-6 md:p-8 shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] border border-border transition-all duration-300 hover-scale">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" />
@@ -432,7 +440,7 @@ const Index = () => {
               </div>
 
               {/* Testimonial 2 */}
-              <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-md)] border border-border">
+              <div className="bg-card rounded-xl p-6 md:p-8 shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] border border-border transition-all duration-300 hover-scale animate-fade-in animate-delay-100">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" />
@@ -448,7 +456,7 @@ const Index = () => {
               </div>
 
               {/* Testimonial 3 */}
-              <div className="bg-card rounded-xl p-8 shadow-[var(--shadow-md)] border border-border">
+              <div className="bg-card rounded-xl p-6 md:p-8 shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] border border-border transition-all duration-300 hover-scale animate-fade-in animate-delay-200">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-accent text-accent" />
@@ -468,11 +476,11 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="kontakt" className="bg-background py-24">
+      <section id="kontakt" className="bg-background py-20 md:py-28 border-t border-border/50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
                 Kontakt & Standort
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -552,8 +560,8 @@ const Index = () => {
 
               {/* Right: Contact Form */}
               <div>
-                <div className="bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)]">
-                  <h3 className="text-xl font-semibold text-foreground mb-6">
+                <div className="bg-card rounded-xl p-6 md:p-8 border border-border shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-shadow duration-300">
+                  <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
                     Nachricht senden
                   </h3>
                   <ContactForm />
@@ -565,8 +573,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 py-12">
+      <footer className="bg-primary text-primary-foreground relative">
+        {/* Gradient transition before footer */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent"></div>
+        <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Column 1: Company Info */}
             <div className="space-y-4">
