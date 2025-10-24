@@ -194,6 +194,13 @@ All colors MUST be HSL.
     @apply text-sm leading-normal;
   }
   
+  /* Footer link styles for dark backgrounds */
+  .footer-link {
+    @apply inline-block text-primary-foreground/90 hover:text-primary-foreground hover:underline;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50;
+    @apply focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors;
+  }
+  
   /* Hero-specific typography */
   .hero-headline {
     @apply heading-1 tracking-tight;

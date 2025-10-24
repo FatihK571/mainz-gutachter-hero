@@ -715,30 +715,30 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground relative">
+      <footer className="bg-primary text-primary-foreground relative" role="contentinfo" aria-label="Fußbereich mit Kontaktinformationen und Links">
         {/* Gradient transition before footer */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent"></div>
         <div className="container mx-auto px-4 py-12 md:py-16">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* Column 1: Company Info */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">
+            <div className="flex flex-col gap-4">
+              <h3 id="footer-company" className="heading-3 text-primary-foreground">
                 Kfz-Gutachter Mainz
               </h3>
-              <div className="space-y-2 text-sm text-primary-foreground/80">
+              <div className="flex flex-col gap-3 text-sm text-primary-foreground/90">
                 <p className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <span>Musterstraße 123<br />55122 Mainz</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <a href="tel:+4961311234567" className="hover:text-primary-foreground transition-colors">
+                  <a href="tel:+4961311234567" className="hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     +49 (0) 6131 123 45 67
                   </a>
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <a href="mailto:info@kfz-gutachter-mainz.de" className="hover:text-primary-foreground transition-colors">
+                  <a href="mailto:info@kfz-gutachter-mainz.de" className="hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     info@kfz-gutachter-mainz.de
                   </a>
                 </p>
@@ -750,56 +750,56 @@ const Index = () => {
                   href="https://facebook.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-ring"
+                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                   aria-label="Besuchen Sie uns auf Facebook"
                 >
-                  <Facebook className="w-5 h-5" />
+                  <Facebook className="w-5 h-5" aria-hidden="true" />
                 </a>
                 <a 
                   href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-ring"
+                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                   aria-label="Folgen Sie uns auf Instagram"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-5 h-5" aria-hidden="true" />
                 </a>
                 <a 
                   href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-ring"
+                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                   aria-label="Verbinden Sie sich mit uns auf LinkedIn"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-5 h-5" aria-hidden="true" />
                 </a>
               </div>
             </div>
 
             {/* Column 2: Quick Links */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">
+            <div className="flex flex-col gap-4">
+              <h3 id="footer-quicklinks" className="heading-3 text-primary-foreground">
                 Schnellzugriff
               </h3>
-              <nav aria-label="Schnellzugriff">
-              <ul className="space-y-2 text-sm text-primary-foreground/80">
+              <nav aria-labelledby="footer-quicklinks">
+              <ul className="flex flex-col gap-3 text-sm text-primary-foreground/90">
                 <li>
-                  <a href="#hero" className="hover:text-primary-foreground transition-colors">
+                  <a href="#hero" className="inline-block hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     Startseite
                   </a>
                 </li>
                 <li>
-                  <a href="#leistungen" className="hover:text-primary-foreground transition-colors">
+                  <a href="#leistungen" className="inline-block hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     Leistungen
                   </a>
                 </li>
                 <li>
-                  <a href="#ueber-uns" className="hover:text-primary-foreground transition-colors">
+                  <a href="#ueber-uns" className="inline-block hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     Über uns
                   </a>
                 </li>
                 <li>
-                  <a href="#kontakt" className="hover:text-primary-foreground transition-colors">
+                  <a href="#kontakt" className="inline-block hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     Kontakt
                   </a>
                 </li>
@@ -808,24 +808,24 @@ const Index = () => {
             </div>
 
             {/* Column 3: Legal Links */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">
+            <div className="flex flex-col gap-4">
+              <h3 id="footer-legal" className="heading-3 text-primary-foreground">
                 Rechtliches
               </h3>
-              <nav aria-label="Rechtliche Links">
-              <ul className="space-y-2 text-sm text-primary-foreground/80">
+              <nav aria-labelledby="footer-legal">
+              <ul className="flex flex-col gap-3 text-sm text-primary-foreground/90">
                 <li>
-                  <a href="/impressum" className="hover:text-primary-foreground transition-colors">
+                  <a href="/impressum" className="inline-block hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     Impressum
                   </a>
                 </li>
                 <li>
-                  <a href="/datenschutz" className="hover:text-primary-foreground transition-colors">
+                  <a href="/datenschutz" className="inline-block hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     Datenschutz
                   </a>
                 </li>
                 <li>
-                  <a href="/agb" className="hover:text-primary-foreground transition-colors">
+                  <a href="/agb" className="inline-block hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
                     AGB
                   </a>
                 </li>
@@ -836,9 +836,9 @@ const Index = () => {
         </div>
 
         {/* Copyright Bar */}
-        <div className="border-t border-primary-foreground/10">
+        <div className="border-t border-primary-foreground/20">
           <div className="container mx-auto px-4 py-6">
-            <p className="text-center text-sm text-primary-foreground/70">
+            <p className="text-center text-sm text-primary-foreground/80">
               © {new Date().getFullYear()} Kfz-Gutachter Mainz. Alle Rechte vorbehalten.
             </p>
           </div>
