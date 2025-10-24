@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 210 30% 92%;
     --muted-foreground: 215 16% 50%;
 
-    --accent: 205 95% 45%;
+    --accent: 205 85% 40%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -51,21 +51,30 @@ All colors MUST be HSL.
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Spacing scale */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 5rem;
+    --spacing-4xl: 7rem;
+    
+    /* Component spacing */
+    --section-spacing-y: 5rem;
+    --section-spacing-y-md: 7rem;
+    --card-padding: 1.5rem;
+    --card-padding-md: 2rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -89,7 +98,7 @@ All colors MUST be HSL.
     --muted: 215 30% 18%;
     --muted-foreground: 215 16% 65%;
 
-    --accent: 205 95% 50%;
+    --accent: 205 90% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -124,6 +133,81 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Section wrappers */
+  .section {
+    @apply py-20 md:py-28;
+  }
+  
+  .section-container {
+    @apply container mx-auto px-4;
+  }
+  
+  .section-content {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .section-header {
+    @apply text-center mb-12 md:mb-16;
+  }
+  
+  /* Typography */
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+  }
+  
+  .heading-3 {
+    @apply text-xl md:text-2xl font-semibold leading-tight;
+  }
+  
+  .body-lg {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+  
+  .body {
+    @apply text-base leading-relaxed;
+  }
+  
+  .body-sm {
+    @apply text-sm leading-normal;
+  }
+  
+  /* Card system */
+  .card {
+    @apply bg-card rounded-xl p-6 md:p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-lg)] transition-all duration-300;
+  }
+  
+  .card-interactive {
+    @apply card hover:scale-[1.02] cursor-pointer;
+  }
+  
+  /* Icon containers */
+  .icon-container-md {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center;
+  }
+  
+  .icon-container-lg {
+    @apply w-14 h-14 rounded-lg flex items-center justify-center;
+  }
+  
+  .icon-container-accent {
+    @apply bg-accent/10 group-hover:bg-accent/20 transition-colors;
+  }
+  
+  .icon-container-primary {
+    @apply bg-primary/10 group-hover:bg-primary/15 transition-colors;
+  }
+  
+  /* Focus states for accessibility */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 }
 

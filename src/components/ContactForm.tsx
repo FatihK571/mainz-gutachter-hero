@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Loader2 } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -85,7 +86,6 @@ export const ContactForm = () => {
                 <Input 
                   placeholder="Ihr vollständiger Name" 
                   {...field}
-                  className="bg-background"
                 />
               </FormControl>
               <FormMessage />
@@ -104,7 +104,6 @@ export const ContactForm = () => {
                   type="email"
                   placeholder="ihre.email@beispiel.de" 
                   {...field}
-                  className="bg-background"
                 />
               </FormControl>
               <FormMessage />
@@ -121,7 +120,7 @@ export const ContactForm = () => {
               <FormControl>
                 <Textarea 
                   placeholder="Beschreiben Sie kurz Ihr Anliegen..."
-                  className="min-h-[150px] bg-background resize-none"
+                  className="min-h-[150px] resize-none"
                   {...field}
                 />
               </FormControl>
@@ -137,6 +136,7 @@ export const ContactForm = () => {
           disabled={isSubmitting}
           className="w-full"
         >
+          {isSubmitting && <Loader2 className="animate-spin" />}
           {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
         </Button>
       </form>
