@@ -187,6 +187,8 @@ const Index = () => {
                     alt="Professioneller Kfz-Gutachter bei der Fahrzeugbegutachtung in Mainz"
                     loading="eager"
                     fetchPriority="high"
+                    width="800"
+                    height="600"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -449,8 +451,9 @@ const Index = () => {
                   <AspectRatio ratio={4 / 5} className="bg-muted">
                     <img 
                       src={founderImage} 
-                      alt="Michael Schneider, Kfz-Sachverständiger, in professioneller Arbeitsumgebung mit über 15 Jahren Erfahrung"
+                      alt="Portrait des Geschäftsführers von Kfz-Gutachter Mainz – Ihr erfahrener Sachverständiger mit 15+ Jahren Expertise"
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </AspectRatio>
                 </div>
