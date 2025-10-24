@@ -208,7 +208,26 @@ All colors MUST be HSL.
   }
   
   .card-interactive {
-    @apply card hover:scale-[1.02] cursor-pointer;
+    @apply card cursor-pointer;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-interactive:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .card-interactive:focus-within {
+    @apply ring-2 ring-accent ring-offset-2 ring-offset-background;
+    outline: none;
+  }
+  
+  .card-interactive:active {
+    transform: translateY(-2px) scale(1.005);
+    box-shadow: var(--shadow-lg);
   }
   
   /* Icon containers */
@@ -365,6 +384,14 @@ All colors MUST be HSL.
   .hero-stats-animate {
     animation: none !important;
     opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .card-interactive {
+    transition-duration: 0.01ms !important;
+  }
+  
+  .card-interactive:hover {
     transform: none !important;
   }
 }

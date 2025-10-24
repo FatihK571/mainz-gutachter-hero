@@ -8,15 +8,23 @@ interface ServiceCardProps {
 }
 
 export const ServiceCard = ({ icon: Icon, title, description, delay = 0 }: ServiceCardProps) => {
-  const delayClass = delay > 0 ? `animate-fade-in animate-delay-${delay}` : "";
+  const delayClass = delay === 100 ? "delay-100" : delay === 200 ? "delay-200" : "";
+  const animationClass = delay > 0 ? `animate-fade-in ${delayClass}` : "animate-fade-in";
   
   return (
-    <div className={`group card-interactive ${delayClass}`}>
-      <div className="icon-container-lg icon-container-accent mb-6">
-        <Icon className="w-7 h-7 text-accent icon-rotate-hover" />
+    <article 
+      className={`group card-interactive ${animationClass}`}
+      tabIndex={0}
+      role="article"
+      aria-label={`${title}: ${description}`}
+    >
+      <div className="icon-container-lg icon-container-accent mb-6 flex-shrink-0">
+        <Icon className="w-7 h-7 text-accent icon-rotate-hover" aria-hidden="true" />
       </div>
-      <h3 className="heading-3 mb-3">{title}</h3>
-      <p className="body text-muted-foreground">{description}</p>
-    </div>
+      <div className="flex-1 flex flex-col">
+        <h3 className="heading-3 mb-3">{title}</h3>
+        <p className="body text-muted-foreground leading-relaxed">{description}</p>
+      </div>
+    </article>
   );
 };

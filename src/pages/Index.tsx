@@ -145,7 +145,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <ServiceCard 
             icon={ClipboardList}
             title="Unfallgutachten"
@@ -160,7 +160,7 @@ const Index = () => {
           <ServiceCard 
             icon={FileText}
             title="Versicherungsansprüche"
-            description="Kompetente Unterstützung bei der Durchsetzung Ihrer berechtigten Schadensersatzansprüche."
+            description="Kompetente Unterstützung bei der Durchsetzung Ihrer Schadensersatzansprüche."
             delay={200}
           />
         </div>
