@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle } from "lucide-react";
+import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2 } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 
 const Index = () => {
@@ -243,6 +243,95 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Timeline Section */}
+      <section className="container mx-auto px-4 py-24">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              So einfach geht's
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Ihr Weg zum Gutachten in nur drei Schritten
+            </p>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Connecting Line (hidden on mobile) */}
+            <div className="hidden lg:block absolute top-16 left-[16.66%] right-[16.66%] h-0.5 bg-gradient-to-r from-accent via-accent to-accent">
+              <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[12px] border-l-accent"></div>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 relative">
+              {/* Step 1 */}
+              <div className="text-center space-y-4">
+                <div className="relative inline-block">
+                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center shadow-[var(--shadow-lg)]">
+                    <PhoneCall className="w-14 h-14 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                    1
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Kontakt aufnehmen
+                </h3>
+                <p className="text-muted-foreground">
+                  Rufen Sie uns an oder nutzen Sie unser Kontaktformular für eine erste Beratung.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="text-center space-y-4">
+                <div className="relative inline-block">
+                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center shadow-[var(--shadow-lg)]">
+                    <Car className="w-14 h-14 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                    2
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Begutachtung vor Ort
+                </h3>
+                <p className="text-muted-foreground">
+                  Wir kommen zu Ihnen und nehmen eine detaillierte Schadensbegutachtung vor.
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="text-center space-y-4">
+                <div className="relative inline-block">
+                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center shadow-[var(--shadow-lg)]">
+                    <FileCheck2 className="w-14 h-14 text-white" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                    3
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Gutachten erhalten
+                </h3>
+                <p className="text-muted-foreground">
+                  Sie erhalten Ihr professionelles Gutachten zur Weiterleitung an die Versicherung.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <Button 
+              variant="hero" 
+              size="lg"
+              className="text-base font-semibold"
+            >
+              Jetzt Termin vereinbaren
+            </Button>
           </div>
         </div>
       </section>
