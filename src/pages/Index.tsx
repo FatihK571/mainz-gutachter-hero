@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Header } from "@/components/Header";
 import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Mail, Facebook, Instagram, Linkedin, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
@@ -9,6 +10,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { ServiceCard } from "@/components/ServiceCard";
 import { FeaturePoint } from "@/components/FeaturePoint";
 import { TestimonialCard } from "@/components/TestimonialCard";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -29,6 +31,34 @@ const testimonials = [
     location: "Frankfurt",
     rating: 5,
   },
+];
+
+const faqItems = [
+  {
+    id: "faq-1",
+    question: "Was kostet ein Unfallgutachten?",
+    answer: "Die Kosten für ein Unfallgutachten trägt in der Regel die gegnerische Versicherung, wenn Sie nicht schuldhaft am Unfall beteiligt waren. Bei Teilschuld werden die Kosten anteilig aufgeteilt. Wir beraten Sie gerne kostenlos zu Ihrem individuellen Fall."
+  },
+  {
+    id: "faq-2",
+    question: "Wie schnell erhalte ich mein Gutachten?",
+    answer: "Nach der Begutachtung vor Ort erstellen wir Ihr detailliertes Gutachten in der Regel innerhalb von 2-3 Werktagen. Bei Eilfällen bieten wir auch einen 24-Stunden-Express-Service an. Sie erhalten das Gutachten digital per E-Mail und auf Wunsch auch in gedruckter Form."
+  },
+  {
+    id: "faq-3",
+    question: "Muss ich das Gutachten bei der Werkstatt erstellen lassen?",
+    answer: "Nein, Sie sind völlig frei in der Wahl Ihres Gutachters. Als unabhängige Sachverständige sind wir an keine Werkstatt gebunden und vertreten ausschließlich Ihre Interessen. Die gegnerische Versicherung kann Ihnen keine Werkstatt oder keinen Gutachter vorschreiben."
+  },
+  {
+    id: "faq-4",
+    question: "Was ist der Unterschied zwischen Kostenvoranschlag und Gutachten?",
+    answer: "Ein Kostenvoranschlag wird von einer Werkstatt erstellt und ist bei kleineren Schäden (unter ca. 1.000 €) oft ausreichend. Ein Gutachten ist deutlich detaillierter, gerichtlich verwertbar und wird von einem unabhängigen Sachverständigen erstellt. Bei höheren Schäden ist ein Gutachten empfehlenswert, da es Ihre Position gegenüber der Versicherung deutlich stärkt."
+  },
+  {
+    id: "faq-5",
+    question: "Welche Unterlagen benötige ich für die Begutachtung?",
+    answer: "Für die Begutachtung benötigen Sie Ihren Unfallbericht (falls vorhanden), die Fahrzeugpapiere und idealerweise Fotos vom Unfallort und den Schäden. Wir helfen Ihnen aber auch, wenn nicht alle Unterlagen vollständig sind – sprechen Sie uns einfach an."
+  }
 ];
 
 const Index = () => {
@@ -492,6 +522,91 @@ const Index = () => {
                   delay={index * 100}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="section bg-gradient-to-br from-primary-light/10 via-background to-primary-light/5 border-t border-border/50" aria-labelledby="faq-heading">
+        <div className="section-container">
+          <div className="section-content">
+            {/* Header */}
+            <div className="section-header">
+              <h2 id="faq-heading" className="heading-2 text-foreground mb-4">
+                Häufig gestellte Fragen
+              </h2>
+              <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
+                Antworten auf die wichtigsten Fragen rund um Kfz-Gutachten und unsere Dienstleistungen
+              </p>
+            </div>
+
+            {/* FAQ Accordion */}
+            <div className="max-w-3xl mx-auto mt-12">
+              <Accordion 
+                type="single" 
+                collapsible 
+                className="space-y-4"
+                aria-label="Häufig gestellte Fragen zum Thema Kfz-Gutachten"
+              >
+                {faqItems.map((item, index) => (
+                  <AccordionItem 
+                    key={item.id}
+                    value={item.id}
+                    className={cn(
+                      "bg-card rounded-lg border border-border px-6 shadow-sm hover:shadow-md transition-shadow",
+                      "animate-fade-in",
+                      index === 1 && "animate-delay-100",
+                      index === 2 && "animate-delay-200",
+                      index === 3 && "animate-delay-300",
+                      index === 4 && "animate-delay-400"
+                    )}
+                  >
+                    <AccordionTrigger 
+                      className="text-foreground hover:no-underline"
+                      aria-label={`Frage: ${item.question}`}
+                    >
+                      <span className="font-semibold text-base md:text-lg pr-4">
+                        {item.question}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pt-2 pb-6 leading-relaxed">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+
+            {/* CTA below FAQ */}
+            <div className="text-center mt-12">
+              <p className="body text-muted-foreground mb-6">
+                Haben Sie weitere Fragen? Wir beraten Sie gerne persönlich.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  asChild
+                  className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
+                >
+                  <a href="#kontakt" aria-label="Zum Kontaktformular springen">
+                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                    Jetzt Frage stellen
+                  </a>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  asChild
+                  className="border-2"
+                >
+                  <a href="tel:+4961311234567" aria-label="Telefonisch beraten lassen">
+                    <PhoneCall className="w-5 h-5" aria-hidden="true" />
+                    +49 (0) 6131 123 45 67
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>

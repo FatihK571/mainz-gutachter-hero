@@ -384,6 +384,14 @@ All colors MUST be HSL.
     animation-delay: 400ms;
   }
   
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-\[400ms\] {
+    animation-delay: 400ms;
+  }
+  
   /* Hero animations - performant and accessible */
   @keyframes hero-fade-in {
     from {
