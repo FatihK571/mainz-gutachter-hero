@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Header } from "@/components/Header";
 import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Mail, Facebook, Instagram, Linkedin, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
@@ -8,6 +9,27 @@ import { ContactForm } from "@/components/ContactForm";
 import { ServiceCard } from "@/components/ServiceCard";
 import { FeaturePoint } from "@/components/FeaturePoint";
 import { TestimonialCard } from "@/components/TestimonialCard";
+
+const testimonials = [
+  {
+    quote: "Schnell und professionell – hat mir sehr geholfen nach meinem Unfall. Die Abwicklung war unkompliziert und transparent.",
+    name: "Sandra Müller",
+    location: "Mainz",
+    rating: 5,
+  },
+  {
+    quote: "Unabhängige Beratung ohne Druck – genau das, was ich nach dem Unfall brauchte. Sehr kompetent und fair.",
+    name: "Thomas Weber",
+    location: "Wiesbaden",
+    rating: 5,
+  },
+  {
+    quote: "Kompetent, fair und persönlich – ich würde jederzeit wieder hier hingehen. Top Service!",
+    name: "Anna Schmidt",
+    location: "Frankfurt",
+    rating: 5,
+  },
+];
 
 const Index = () => {
   return (
@@ -440,24 +462,36 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-              <TestimonialCard 
-                quote="Schnell und professionell – hat mir sehr geholfen nach meinem Unfall."
-                name="Sandra Müller"
-                location="Mainz"
-              />
-              <TestimonialCard 
-                quote="Unabhängige Beratung ohne Druck – genau das, was ich nach dem Unfall brauchte."
-                name="Thomas Weber"
-                location="Wiesbaden"
-                delay={100}
-              />
-              <TestimonialCard 
-                quote="Kompetent, fair und persönlich – ich würde jederzeit wieder hier hingehen."
-                name="Anna Schmidt"
-                location="Frankfurt"
-                delay={200}
-              />
+            {/* Mobile/Tablet Carousel */}
+            <div className="lg:hidden">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent className="-ml-4">
+                  {testimonials.map((testimonial, index) => (
+                    <CarouselItem key={index} className="pl-4 md:basis-1/2">
+                      <TestimonialCard {...testimonial} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-0 -translate-x-1/2" />
+                <CarouselNext className="right-0 translate-x-1/2" />
+              </Carousel>
+            </div>
+
+            {/* Desktop Grid */}
+            <div className="hidden lg:grid lg:grid-cols-3 gap-6 xl:gap-8">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard 
+                  key={index}
+                  {...testimonial}
+                  delay={index * 100}
+                />
+              ))}
             </div>
           </div>
         </div>

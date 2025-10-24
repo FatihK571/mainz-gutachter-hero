@@ -1,27 +1,69 @@
-import { Star } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { StarRating } from "@/components/StarRating";
 
 interface TestimonialCardProps {
   quote: string;
   name: string;
   location: string;
+  rating?: number;
+  avatarUrl?: string;
+  maxQuoteLength?: number;
   delay?: number;
 }
 
-export const TestimonialCard = ({ quote, name, location, delay = 0 }: TestimonialCardProps) => {
-  const delayClass = delay > 0 ? `animate-fade-in animate-delay-${delay}` : "";
+const truncateQuote = (text: string, maxLength: number): string => {
+  if (text.length <= maxLength) return text;
+  const truncated = text.slice(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  return lastSpace > 0 ? truncated.slice(0, lastSpace) + '...' : truncated + '...';
+};
+
+const getInitials = (name: string): string => {
+  return name
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+};
+
+export const TestimonialCard = ({ 
+  quote, 
+  name, 
+  location, 
+  rating = 5,
+  avatarUrl,
+  maxQuoteLength = 180,
+  delay = 0 
+}: TestimonialCardProps) => {
+  const delayClass = delay > 0 ? `animate-fade-in-up animate-delay-${delay}` : "animate-fade-in-up";
+  const truncatedQuote = truncateQuote(quote, maxQuoteLength);
   
   return (
-    <div className={`card-interactive ${delayClass}`}>
-      <div className="flex gap-1 mb-4" role="img" aria-label="5 von 5 Sternen">
-        {[...Array(5)].map((_, i) => (
-          <Star key={i} className="w-5 h-5 fill-accent text-accent" aria-hidden="true" />
-        ))}
+    <figure className={`testimonial-card ${delayClass}`}>
+      {/* Header with Avatar and Info */}
+      <div className="flex items-center gap-4 mb-4">
+        <Avatar className="h-12 w-12">
+          <AvatarImage src={avatarUrl} alt={`${name} Profilbild`} />
+          <AvatarFallback className="bg-accent/10 text-accent font-semibold">
+            {getInitials(name)}
+          </AvatarFallback>
+        </Avatar>
+        <div className="flex-1 min-w-0">
+          <p className="font-semibold text-foreground truncate">{name}</p>
+          <p className="text-sm text-muted-foreground truncate">{location}</p>
+        </div>
       </div>
-      <p className="text-foreground leading-relaxed mb-6 italic">"{quote}"</p>
-      <div className="border-t border-border pt-4">
-        <p className="font-semibold text-foreground">{name}</p>
-        <p className="body-sm text-muted-foreground">{location}</p>
-      </div>
-    </div>
+
+      {/* Star Rating */}
+      <StarRating rating={rating} size="sm" className="mb-4" />
+
+      {/* Quote */}
+      <blockquote className="flex-1">
+        <p className="text-foreground leading-relaxed italic">
+          "{truncatedQuote}"
+        </p>
+      </blockquote>
+    </figure>
   );
 };
