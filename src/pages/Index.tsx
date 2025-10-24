@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Star, Mail } from "lucide-react";
+import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Star, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
 import { ContactForm } from "@/components/ContactForm";
@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--hero-gradient-start))] to-[hsl(var(--hero-gradient-end))]">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
+      <section id="hero" className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in">
@@ -112,7 +112,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="container mx-auto px-4 pb-24">
+      <section id="leistungen" className="container mx-auto px-4 pb-24">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Unsere Leistungen
@@ -339,7 +339,7 @@ const Index = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="bg-background py-24">
+      <section id="ueber-uns" className="bg-background py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -468,7 +468,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-background py-24">
+      <section id="kontakt" className="bg-background py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -563,6 +563,131 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Column 1: Company Info */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">
+                Kfz-Gutachter Mainz
+              </h3>
+              <div className="space-y-2 text-sm text-primary-foreground/80">
+                <p className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <span>Musterstraße 123<br />55122 Mainz</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <a href="tel:+4961311234567" className="hover:text-primary-foreground transition-colors">
+                    +49 (0) 6131 123 45 67
+                  </a>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <a href="mailto:info@kfz-gutachter-mainz.de" className="hover:text-primary-foreground transition-colors">
+                    info@kfz-gutachter-mainz.de
+                  </a>
+                </p>
+              </div>
+              
+              {/* Social Icons */}
+              <div className="flex gap-3 pt-2">
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Column 2: Quick Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">
+                Schnellzugriff
+              </h3>
+              <ul className="space-y-2 text-sm text-primary-foreground/80">
+                <li>
+                  <a href="#hero" className="hover:text-primary-foreground transition-colors">
+                    Startseite
+                  </a>
+                </li>
+                <li>
+                  <a href="#leistungen" className="hover:text-primary-foreground transition-colors">
+                    Leistungen
+                  </a>
+                </li>
+                <li>
+                  <a href="#ueber-uns" className="hover:text-primary-foreground transition-colors">
+                    Über uns
+                  </a>
+                </li>
+                <li>
+                  <a href="#kontakt" className="hover:text-primary-foreground transition-colors">
+                    Kontakt
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Legal Links */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold">
+                Rechtliches
+              </h3>
+              <ul className="space-y-2 text-sm text-primary-foreground/80">
+                <li>
+                  <a href="/impressum" className="hover:text-primary-foreground transition-colors">
+                    Impressum
+                  </a>
+                </li>
+                <li>
+                  <a href="/datenschutz" className="hover:text-primary-foreground transition-colors">
+                    Datenschutz
+                  </a>
+                </li>
+                <li>
+                  <a href="/agb" className="hover:text-primary-foreground transition-colors">
+                    AGB
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright Bar */}
+        <div className="border-t border-primary-foreground/10">
+          <div className="container mx-auto px-4 py-6">
+            <p className="text-center text-sm text-primary-foreground/70">
+              © {new Date().getFullYear()} Kfz-Gutachter Mainz. Alle Rechte vorbehalten.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
