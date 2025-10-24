@@ -86,7 +86,7 @@ export const Header = () => {
             {/* CTA + Mobile Trigger */}
             <div className="flex items-center gap-4">
               <Button 
-                variant="hero" 
+                variant="primary" 
                 size="sm" 
                 className="hidden sm:inline-flex"
                 asChild
@@ -134,7 +134,7 @@ export const Header = () => {
                   
                   <div className="mt-8 pt-8 border-t border-border">
                     <SheetClose asChild>
-                      <Button variant="hero" className="w-full" size="lg" asChild>
+                      <Button variant="primary" className="w-full" size="lg" asChild>
                         <a href="#kontakt" onClick={(e) => handleSmoothScroll(e, '#kontakt')}>
                           <Phone className="w-4 h-4" />
                           Jetzt Kontakt aufnehmen

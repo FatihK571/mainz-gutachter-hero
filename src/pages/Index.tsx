@@ -113,7 +113,7 @@ const Index = () => {
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button 
-                    variant="hero" 
+                    variant="primary" 
                     size="lg"
                     className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
                     aria-label="Kostenlose Beratung für Ihr Kfz-Gutachten anfordern"
@@ -122,10 +122,10 @@ const Index = () => {
                     Jetzt Beratung anfordern
                   </Button>
                   <Button 
-                    variant="outline" 
+                    variant="secondary" 
                     size="lg"
                     asChild
-                    className="border-2 group"
+                    className="group"
                   >
                     <a href="tel:+4961231234567" aria-label="Rufen Sie uns kostenlos an: 06123 123 4567">
                       <PhoneCall className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
@@ -389,7 +389,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
-                  variant="hero" 
+                  variant="primary" 
                   size="lg"
                   className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
                   aria-label="Jetzt unverbindlichen Termin vereinbaren"
@@ -398,9 +398,8 @@ const Index = () => {
                   Jetzt Termin vereinbaren
                 </Button>
                 <Button 
-                  variant="outline" 
+                  variant="secondary" 
                   size="lg"
-                  className="border-2"
                   asChild
                 >
                   <a href="#kontakt" aria-label="Mehr über unseren Service erfahren">
@@ -585,7 +584,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
-                  variant="hero" 
+                  variant="primary" 
                   size="lg"
                   asChild
                   className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
@@ -596,10 +595,9 @@ const Index = () => {
                   </a>
                 </Button>
                 <Button 
-                  variant="outline" 
+                  variant="secondary" 
                   size="lg"
                   asChild
-                  className="border-2"
                 >
                   <a href="tel:+4961311234567" aria-label="Telefonisch beraten lassen">
                     <PhoneCall className="w-5 h-5" aria-hidden="true" />
