@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Shield, FileCheck } from "lucide-react";
+import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 
 const Index = () => {
@@ -105,6 +105,59 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="container mx-auto px-4 pb-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Unsere Leistungen
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Professionelle Sachverständigen-Dienstleistungen für Ihre Ansprüche
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Card 1: Unfallgutachten */}
+          <div className="group bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow duration-300">
+            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors">
+              <ClipboardList className="w-7 h-7 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-3">
+              Unfallgutachten
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Detaillierte Schadensanalyse und gerichtsfeste Dokumentation für Ihren Versicherungsfall.
+            </p>
+          </div>
+
+          {/* Card 2: Fahrzeugbewertung */}
+          <div className="group bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow duration-300">
+            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors">
+              <BadgeEuro className="w-7 h-7 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-3">
+              Fahrzeugbewertung
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Präzise Wertermittlung für Kauf, Verkauf oder Versicherungszwecke Ihres Fahrzeugs.
+            </p>
+          </div>
+
+          {/* Card 3: Versicherungsansprüche */}
+          <div className="group bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)] transition-shadow duration-300">
+            <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/15 transition-colors">
+              <FileText className="w-7 h-7 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground mb-3">
+              Versicherungsansprüche
+            </h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Kompetente Unterstützung bei der Durchsetzung Ihrer berechtigten Schadensersatzansprüche.
+            </p>
           </div>
         </div>
       </section>
