@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText } from "lucide-react";
+import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 
 const Index = () => {
@@ -158,6 +158,91 @@ const Index = () => {
             <p className="text-muted-foreground leading-relaxed">
               Kompetente Unterstützung bei der Durchsetzung Ihrer berechtigten Schadensersatzansprüche.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Credibility Section */}
+      <section className="bg-primary-light/30 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Warum Sie uns wählen sollten
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Als unabhängige Sachverständige vereinen wir Expertise mit persönlichem Service. 
+                Neutralität, Schnelligkeit und Fachkompetenz sind unsere Grundpfeiler – damit Sie 
+                zu Ihrem Recht kommen. Wir stehen Ihnen mit Rat und Tat zur Seite.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {/* Point 1: Erfahrung */}
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Award className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Langjährige Erfahrung</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Über 15 Jahre Expertise in Unfallgutachten und Fahrzeugbewertung
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 2: Regional */}
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Mainz & Umgebung</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Vor-Ort-Service in der gesamten Region – schnell und unkompliziert
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 3: Unabhängig */}
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Scale className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Vollkommen unabhängig</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Neutral und ohne Werkstattbindung – nur Ihr Interesse zählt
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 4: Schnell */}
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Schnelle Bearbeitung</h3>
+                  <p className="text-sm text-muted-foreground">
+                    24-Stunden-Service und zügige Gutachtenerstellung
+                  </p>
+                </div>
+              </div>
+
+              {/* Point 5: Persönlich */}
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MessageCircle className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Persönlich erreichbar</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Direkter Kontakt zu Ihrem Sachverständigen – keine Warteschleifen
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
