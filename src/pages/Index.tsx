@@ -100,7 +100,7 @@ const Index = () => {
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-accent/10 rounded-full border-2 border-accent/30 shadow-[var(--shadow-sm)] w-fit">
                   <Award className="w-4 h-4 text-accent" aria-hidden="true" />
                   <span className="text-xs md:text-sm font-bold text-accent tracking-wide">
-                    Kfz-Gutachter Mainz
+                    Gutachter Jabarov
                   </span>
                 </div>
                 
@@ -151,7 +151,7 @@ const Index = () => {
                     asChild
                     className="border-2 group text-sm md:text-base"
                   >
-                    <a href="tel:+4961231234567" aria-label="Rufen Sie uns kostenlos an: 06123 123 4567">
+                    <a href="tel:+4961313277570" aria-label="Rufen Sie uns kostenlos an: 06131 3277570">
                       <PhoneCall className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                       Kostenlos anrufen
                     </a>
@@ -639,9 +639,9 @@ const Index = () => {
                   asChild
                   className="border-2 text-sm md:text-base"
                 >
-                  <a href="tel:+4961311234567" aria-label="Telefonisch beraten lassen">
+                  <a href="tel:+4961313277570" aria-label="Telefonisch beraten lassen">
                     <PhoneCall className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
-                    <span className="hidden xs:inline">+49 (0) 6131 123 45 67</span>
+                    <span className="hidden xs:inline">+49 (0) 6131 3277570</span>
                     <span className="xs:hidden">Anrufen</span>
                   </a>
                 </Button>
@@ -675,31 +675,31 @@ const Index = () => {
                   <div className="flex flex-col gap-2 md:gap-3">
                     {/* Phone */}
                     <a 
-                      href="tel:+4961311234567"
+                      href="tel:+4961313277570"
                       className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
-                      aria-label="Rufen Sie uns an unter +49 6131 123 45 67"
+                      aria-label="Rufen Sie uns an unter +49 6131 3277570"
                     >
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
                         <Phone className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                       </div>
                       <div className="flex-1">
                         <p className="font-semibold text-sm md:text-base text-foreground mb-1">Telefon</p>
-                        <p className="text-sm md:text-base text-muted-foreground">+49 (0) 6131 123 45 67</p>
+                        <p className="text-sm md:text-base text-muted-foreground">+49 (0) 6131 3277570</p>
                       </div>
                     </a>
 
                     {/* Email */}
                     <a 
-                      href="mailto:info@kfz-gutachter-mainz.de"
+                      href="mailto:info@gutachter-jabarov.de"
                       className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
-                      aria-label="Senden Sie uns eine E-Mail an info@kfz-gutachter-mainz.de"
+                      aria-label="Senden Sie uns eine E-Mail an info@gutachter-jabarov.de"
                     >
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
                         <Mail className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                       </div>
                       <div className="flex-1">
                         <p className="font-semibold text-sm md:text-base text-foreground mb-1">E-Mail</p>
-                        <p className="text-sm md:text-base text-muted-foreground break-all">info@kfz-gutachter-mainz.de</p>
+                        <p className="text-sm md:text-base text-muted-foreground break-all">info@gutachter-jabarov.de</p>
                       </div>
                     </a>
 
@@ -711,8 +711,8 @@ const Index = () => {
                       <div className="flex-1">
                         <p className="font-semibold text-sm md:text-base text-foreground mb-1">Adresse</p>
                         <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                          Musterstraße 123<br />
-                          55122 Mainz
+                          Elsa-Brändström-Straße 26<br />
+                          55124 Mainz
                         </p>
                       </div>
                     </div>
@@ -762,23 +762,23 @@ const Index = () => {
             {/* Column 1: Company Info */}
             <div className="flex flex-col gap-4">
               <h3 id="footer-company" className="heading-3 text-primary-foreground">
-                Kfz-Gutachter Mainz
+                Gutachter Jabarov
               </h3>
               <div className="flex flex-col gap-3 text-sm text-primary-foreground/90">
                 <p className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span>Musterstraße 123<br />55122 Mainz</span>
+                  <span>Elsa-Brändström-Straße 26<br />55124 Mainz</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <a href="tel:+4961311234567" className="hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
-                    +49 (0) 6131 123 45 67
+                  <a href="tel:+4961313277570" className="hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
+                    +49 (0) 6131 3277570
                   </a>
                 </p>
                 <p className="flex items-center gap-2">
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <a href="mailto:info@kfz-gutachter-mainz.de" className="hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
-                    info@kfz-gutachter-mainz.de
+                  <a href="mailto:info@gutachter-jabarov.de" className="hover:text-primary-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm transition-colors">
+                    info@gutachter-jabarov.de
                   </a>
                 </p>
               </div>
@@ -786,29 +786,32 @@ const Index = () => {
               {/* Social Icons */}
               <div className="flex gap-3 sm:gap-4 pt-2">
                 <a 
-                  href="https://facebook.com" 
+                  href="#" 
+                  style={{ pointerEvents: 'none', opacity: 0.6 }}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 sm:w-11 sm:h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-                  aria-label="Besuchen Sie uns auf Facebook"
+                  aria-label="Facebook (in Kürze verfügbar)"
                 >
                   <Facebook className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
                 <a 
-                  href="https://instagram.com" 
+                  href="#" 
+                  style={{ pointerEvents: 'none', opacity: 0.6 }}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 sm:w-11 sm:h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-                  aria-label="Folgen Sie uns auf Instagram"
+                  aria-label="Instagram (in Kürze verfügbar)"
                 >
                   <Instagram className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="#" 
+                  style={{ pointerEvents: 'none', opacity: 0.6 }}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 sm:w-11 sm:h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-                  aria-label="Verbinden Sie sich mit uns auf LinkedIn"
+                  aria-label="LinkedIn (in Kürze verfügbar)"
                 >
                   <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
@@ -878,7 +881,7 @@ const Index = () => {
         <div className="border-t border-primary-foreground/20">
           <div className="container mx-auto px-4 py-6">
             <p className="text-center text-sm text-primary-foreground/80">
-              © {new Date().getFullYear()} Kfz-Gutachter Mainz. Alle Rechte vorbehalten.
+              © {new Date().getFullYear()} Gutachter Jabarov. Alle Rechte vorbehalten.
             </p>
           </div>
         </div>

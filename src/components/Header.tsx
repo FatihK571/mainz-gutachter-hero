@@ -70,7 +70,7 @@ export const Header = () => {
               }}
             >
               <FileCheck className="w-5 h-5 md:w-6 md:h-6 text-accent" />
-              <span className="hidden xs:inline sm:inline">KFZ-Gutachter</span>
+              <span className="hidden xs:inline sm:inline">Gutachter Jabarov</span>
             </a>
             
             {/* Desktop Nav */}
