@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Star } from "lucide-react";
+import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Star, Mail } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
+import { ContactForm } from "@/components/ContactForm";
 
 const Index = () => {
   return (
@@ -459,6 +460,103 @@ const Index = () => {
                 <div className="border-t border-border pt-4">
                   <p className="font-semibold text-foreground">Anna Schmidt</p>
                   <p className="text-sm text-muted-foreground">Frankfurt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="bg-background py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Kontakt & Standort
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Rufen Sie uns an oder senden Sie eine Nachricht – wir sind für Sie da 
+                und beraten Sie gerne zu Ihrem Anliegen.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Left: Contact Info & Map */}
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-6">
+                    Kontaktinformationen
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    {/* Phone */}
+                    <a 
+                      href="tel:+4961311234567"
+                      className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors group"
+                    >
+                      <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
+                        <Phone className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Telefon</p>
+                        <p className="text-muted-foreground">+49 (0) 6131 123 45 67</p>
+                      </div>
+                    </a>
+
+                    {/* Email */}
+                    <a 
+                      href="mailto:info@kfz-gutachter-mainz.de"
+                      className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors group"
+                    >
+                      <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
+                        <Mail className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">E-Mail</p>
+                        <p className="text-muted-foreground">info@kfz-gutachter-mainz.de</p>
+                      </div>
+                    </a>
+
+                    {/* Address */}
+                    <div className="flex items-start gap-4 p-4 rounded-lg">
+                      <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Adresse</p>
+                        <p className="text-muted-foreground">
+                          Musterstraße 123<br />
+                          55122 Mainz
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Map Placeholder */}
+                <div className="rounded-xl overflow-hidden border border-border bg-muted/30">
+                  <div className="aspect-video flex items-center justify-center">
+                    <div className="text-center space-y-2">
+                      <MapPin className="w-12 h-12 text-muted-foreground mx-auto" />
+                      <p className="text-muted-foreground font-medium">
+                        Karten-Ansicht
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Mainz & Umgebung
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Contact Form */}
+              <div>
+                <div className="bg-card rounded-xl p-8 border border-border shadow-[var(--shadow-sm)]">
+                  <h3 className="text-xl font-semibold text-foreground mb-6">
+                    Nachricht senden
+                  </h3>
+                  <ContactForm />
                 </div>
               </div>
             </div>
