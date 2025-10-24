@@ -14,110 +14,121 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section id="main-content" className="section-container"  aria-labelledby="hero-heading">
-        <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 animate-fade-in">
-            <div className="inline-block">
-              <span className="text-sm font-semibold text-primary px-4 py-1.5 bg-primary/5 rounded-full border border-primary/10">
-                Kfz-Gutachter Mainz
-              </span>
-            </div>
-            
-            <h1 id="hero-heading" className="heading-1 text-foreground">
-              Unfall gehabt?{" "}
-              <span className="text-primary">Wir klären das für Sie!</span>
-            </h1>
-            
-            <p className="body-lg text-muted-foreground">
-              Als unabhängige Sachverständige stehen wir Ihnen mit Expertise und 
-              Neutralität zur Seite. Professionelle Unfallgutachten für Ihren 
-              gerechten Schadensersatz.
-            </p>
-
-            {/* Features */}
-            <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-2 text-foreground">
-                <Shield className="w-5 h-5 text-accent" />
-                <span className="font-medium">Unabhängig & neutral</span>
-              </div>
-              <div className="flex items-center gap-2 text-foreground">
-                <FileCheck className="w-5 h-5 text-accent" />
-                <span className="font-medium">Gerichtlich anerkannt</span>
-              </div>
-              <div className="flex items-center gap-2 text-foreground">
-                <Phone className="w-5 h-5 text-accent" />
-                <span className="font-medium">Schnelle Bearbeitung</span>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="pt-6 flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="hero" 
-                size="lg"
-                className="text-base font-semibold"
-                aria-label="Jetzt Beratung anfordern"
-              >
-                Jetzt Beratung anfordern
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="text-base font-semibold border-2"
-                aria-label="Kostenlos anrufen"
-              >
-                Kostenlos anrufen
-              </Button>
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="pt-8 border-t border-border">
-              <p className="text-sm text-muted-foreground mb-3">
-                Vertrauen Sie auf unsere Erfahrung:
-              </p>
-              <div className="flex gap-8 text-foreground">
-                <div>
-                  <div className="text-2xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Gutachten/Jahr</div>
+      <section id="main-content" className="relative overflow-hidden" aria-labelledby="hero-heading">
+        <div className="section-container" style={{ paddingTop: 'var(--hero-spacing-y)', paddingBottom: 'var(--hero-spacing-y)' }}>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="flex flex-col gap-8 hero-content-animate">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full border-2 border-accent/30 shadow-[var(--shadow-sm)] w-fit">
+                  <Award className="w-4 h-4 text-accent" aria-hidden="true" />
+                  <span className="text-sm font-bold text-accent tracking-wide">
+                    Kfz-Gutachter Mainz
+                  </span>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">24h</div>
-                  <div className="text-sm text-muted-foreground">Vor-Ort-Service</div>
+                
+                {/* Headline */}
+                <h1 id="hero-heading" className="hero-headline text-foreground">
+                  Unfall gehabt?{" "}
+                  <span className="text-accent">Wir klären das für Sie!</span>
+                </h1>
+                
+                {/* Subheadline */}
+                <p className="hero-subheadline">
+                  Als unabhängige Sachverständige stehen wir Ihnen mit Expertise und 
+                  Neutralität zur Seite. Professionelle Unfallgutachten für Ihren 
+                  gerechten Schadensersatz.
+                </p>
+
+                {/* Features */}
+                <ul className="flex flex-wrap gap-6 pt-2" role="list">
+                  <li className="flex items-center gap-2.5 text-foreground">
+                    <Shield className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span className="font-medium text-sm md:text-base">Unabhängig & neutral</span>
+                  </li>
+                  <li className="flex items-center gap-2.5 text-foreground">
+                    <FileCheck className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span className="font-medium text-sm md:text-base">Gerichtlich anerkannt</span>
+                  </li>
+                  <li className="flex items-center gap-2.5 text-foreground">
+                    <Clock className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span className="font-medium text-sm md:text-base">Schnelle Bearbeitung</span>
+                  </li>
+                </ul>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Button 
+                    variant="hero" 
+                    size="lg"
+                    className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
+                    aria-label="Kostenlose Beratung für Ihr Kfz-Gutachten anfordern"
+                  >
+                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                    Jetzt Beratung anfordern
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    asChild
+                    className="border-2 group"
+                  >
+                    <a href="tel:+4961231234567" aria-label="Rufen Sie uns kostenlos an: 06123 123 4567">
+                      <PhoneCall className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
+                      Kostenlos anrufen
+                    </a>
+                  </Button>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary">15+</div>
-                  <div className="text-sm text-muted-foreground">Jahre Erfahrung</div>
+
+                {/* Trust Indicators */}
+                <div className="pt-8 hero-stats-animate" role="region" aria-labelledby="trust-heading">
+                  <h2 id="trust-heading" className="sr-only">Unsere Leistungsdaten</h2>
+                  <div className="grid grid-cols-3 gap-6 p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50">
+                    <dl className="text-center">
+                      <dt className="hero-stat-value">500+</dt>
+                      <dd className="hero-stat-label">Gutachten pro Jahr</dd>
+                    </dl>
+                    <dl className="text-center">
+                      <dt className="hero-stat-value">24h</dt>
+                      <dd className="hero-stat-label">Vor-Ort-Service</dd>
+                    </dl>
+                    <dl className="text-center">
+                      <dt className="hero-stat-value">15+</dt>
+                      <dd className="hero-stat-label">Jahre Erfahrung</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Image */}
+              <div className="relative hero-image-animate">
+                <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-xl)]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 z-10" />
+                  <img 
+                    src={heroImage} 
+                    alt="Professioneller Kfz-Gutachter bei der Fahrzeugbegutachtung in Mainz"
+                    loading="eager"
+                    fetchPriority="high"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                
+                {/* Floating Card */}
+                <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-[var(--shadow-lg)] border border-border max-w-xs hidden lg:block">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                      <Shield className="w-6 h-6 text-accent" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-foreground">100% Unabhängig</div>
+                      <div className="text-sm text-muted-foreground">Keine Werkstattbindung</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="relative animate-fade-in lg:animate-delay-200">
-            <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-lg)]">
-              <img 
-                src={heroImage} 
-                alt="Professioneller Kfz-Gutachter bei der Fahrzeugbegutachtung in Mainz"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            
-            {/* Floating Card */}
-            <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-[var(--shadow-lg)] border border-border max-w-xs hidden lg:block">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground">100% Unabhängig</div>
-                  <div className="text-sm text-muted-foreground">Keine Werkstattbindung</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         </div>
       </section>
 
