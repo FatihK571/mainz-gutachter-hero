@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2 } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
+import founderImage from "@/assets/founder-portrait.jpg";
 
 const Index = () => {
   return (
@@ -332,6 +333,69 @@ const Index = () => {
             >
               Jetzt Termin vereinbaren
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section className="bg-background py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Image Left */}
+              <div className="order-2 lg:order-1">
+                <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-lg)]">
+                  <img 
+                    src={founderImage} 
+                    alt="Michael Schneider, Kfz-Sachverständiger und Geschäftsführer"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Text Right */}
+              <div className="order-1 lg:order-2 space-y-6">
+                <div>
+                  <span className="text-sm font-semibold text-accent uppercase tracking-wide">
+                    Über uns
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+                    Ihr Partner für faire Gutachten
+                  </h2>
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-foreground mb-1">
+                      Michael Schneider
+                    </h3>
+                    <p className="text-accent font-medium">
+                      Kfz-Sachverständiger & Geschäftsführer
+                    </p>
+                  </div>
+
+                  <p className="text-muted-foreground leading-relaxed">
+                    Seit über 15 Jahren bin ich als unabhängiger Kfz-Sachverständiger in Mainz und 
+                    Umgebung tätig. Meine Expertise liegt in der präzisen und neutralen Begutachtung 
+                    von Fahrzeugschäden. Mir ist es wichtig, dass Sie als Kunde im Mittelpunkt stehen – 
+                    ohne Werkstattbindung, ohne versteckte Interessen. Mit persönlicher Beratung und 
+                    schneller Bearbeitung unterstütze ich Sie dabei, zu Ihrem Recht zu kommen. 
+                    Vertrauen und Transparenz sind die Grundpfeiler meiner Arbeit.
+                  </p>
+
+                  <div className="flex flex-wrap gap-4 pt-4">
+                    <div className="flex items-center gap-2">
+                      <Shield className="w-5 h-5 text-accent" />
+                      <span className="text-sm font-medium text-foreground">Zertifiziert & geprüft</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Award className="w-5 h-5 text-accent" />
+                      <span className="text-sm font-medium text-foreground">15+ Jahre Erfahrung</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
