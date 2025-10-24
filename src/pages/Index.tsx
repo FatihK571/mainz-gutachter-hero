@@ -520,7 +520,7 @@ const Index = () => {
             </div>
 
             {/* Mobile/Tablet Carousel */}
-            <div className="md:hidden">
+            <div className="md:hidden overflow-hidden">
               <Carousel
                 opts={{
                   align: "start",
@@ -528,9 +528,9 @@ const Index = () => {
                 }}
                 className="w-full"
               >
-                <CarouselContent className="-ml-2 md:-ml-4">
+                <CarouselContent className="ml-0 gap-2">
                   {testimonials.map((testimonial, index) => (
-                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
+                    <CarouselItem key={index} className="pl-0 basis-full min-w-0">
                       <TestimonialCard {...testimonial} />
                     </CarouselItem>
                   ))}

@@ -119,7 +119,7 @@ export const Header = () => {
                   </Button>
                 </SheetTrigger>
                 
-                <SheetContent side="right" className="w-[85vw] max-w-[320px] sm:max-w-[400px]">
+                <SheetContent side="right" className="w-[min(85vw,320px)] sm:max-w-[400px] overflow-x-hidden">
                   <SheetHeader>
                     <SheetTitle>Navigation</SheetTitle>
                   </SheetHeader>
