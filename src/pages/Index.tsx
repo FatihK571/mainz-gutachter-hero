@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/Header";
 import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
@@ -10,8 +11,10 @@ import { TestimonialCard } from "@/components/TestimonialCard";
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[hsl(var(--hero-gradient-start))] to-[hsl(var(--hero-gradient-end))]">
+      <Header />
+      
       {/* Hero Section */}
-      <section id="hero" className="section-container"  aria-labelledby="hero-heading">
+      <section id="main-content" className="section-container"  aria-labelledby="hero-heading">
         <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -155,7 +158,7 @@ const Index = () => {
       </section>
 
       {/* Credibility Section */}
-      <section className="section bg-gradient-to-br from-accent/5 via-background to-accent/3 border-t border-border/50" aria-labelledby="credibility-heading">
+      <section id="warum-wir" className="section bg-gradient-to-br from-accent/5 via-background to-accent/3 border-t border-border/50" aria-labelledby="credibility-heading">
         <div className="section-container">
           <div className="section-content">
             <div className="section-header">
@@ -201,7 +204,7 @@ const Index = () => {
       </section>
 
       {/* Process Timeline Section */}
-      <section className="section bg-background" aria-labelledby="process-heading">
+      <section id="ablauf" className="section bg-background" aria-labelledby="process-heading">
         <div className="section-container">
         <div className="section-content">
           <div className="section-header">
@@ -356,7 +359,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="section bg-gradient-to-br from-primary-light/30 via-primary-light/10 to-background" aria-labelledby="testimonials-heading">
+      <section id="referenzen" className="section bg-gradient-to-br from-primary-light/30 via-primary-light/10 to-background" aria-labelledby="testimonials-heading">
         <div className="section-container">
           <div className="section-content">
             <div className="section-header">

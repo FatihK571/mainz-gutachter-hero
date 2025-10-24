@@ -128,7 +128,7 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
+    scroll-padding-top: 5rem;
   }
 
   body {
@@ -208,6 +208,36 @@ All colors MUST be HSL.
   /* Focus states for accessibility */
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  
+  /* Navigation link styles */
+  .nav-link {
+    @apply relative text-sm font-medium text-foreground/80 
+           transition-colors duration-200 
+           hover:text-foreground 
+           focus-ring rounded-sm px-2 py-1;
+  }
+  
+  .nav-link-active {
+    @apply text-primary font-semibold;
+  }
+  
+  .nav-link-underline {
+    @apply after:content-[''] after:absolute after:left-2 after:bottom-0 
+           after:w-[calc(100%-1rem)] after:h-0.5 after:bg-primary 
+           after:scale-x-0 after:origin-left after:transition-transform 
+           after:duration-300 hover:after:scale-x-100;
+  }
+  
+  .nav-link-active-underline {
+    @apply after:scale-x-100;
+  }
+  
+  /* Mobile menu styles */
+  .mobile-menu-link {
+    @apply text-2xl font-semibold text-foreground 
+           hover:text-primary transition-colors 
+           focus-ring rounded-md p-2;
   }
 }
 
