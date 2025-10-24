@@ -304,6 +304,35 @@ All colors MUST be HSL.
            hover:text-primary transition-colors 
            focus-ring rounded-md p-2;
   }
+  
+  /* Process step component styles */
+  .process-step-icon {
+    @apply w-32 h-32 mx-auto bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center shadow-[var(--shadow-lg)];
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .process-step-icon:hover {
+    @apply shadow-[var(--shadow-xl)] scale-105;
+  }
+  
+  .process-step-badge {
+    @apply absolute -top-2 -right-2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md text-lg;
+  }
+  
+  .process-connector {
+    animation: connector-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes connector-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .process-connector {
+      animation: none;
+    }
+  }
 }
 
 @layer utilities {

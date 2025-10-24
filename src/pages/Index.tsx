@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Mail, Facebook, Instagram, Linkedin, Calendar, ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
 import { ContactForm } from "@/components/ContactForm";
@@ -239,78 +239,132 @@ const Index = () => {
 
           {/* Timeline */}
           <div className="relative">
-            {/* Connecting Line (hidden on mobile) */}
-            <div className="hidden lg:block absolute top-16 left-[16.66%] right-[16.66%] h-0.5 bg-gradient-to-r from-accent via-accent to-accent">
-              <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[12px] border-l-accent"></div>
+            {/* Horizontal Connector (desktop only) */}
+            <div 
+              className="hidden lg:block absolute top-16 h-1 bg-gradient-to-r from-accent/40 via-accent to-accent/40 process-connector"
+              style={{ left: 'calc(16.66% + 4rem)', right: 'calc(16.66% + 4rem)' }}
+              aria-hidden="true"
+            >
+              <div className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 text-white" />
+              </div>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 relative">
+            {/* Vertical Connector (mobile/tablet only) */}
+            <div 
+              className="lg:hidden absolute left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-accent/40 via-accent to-accent/40" 
+              style={{ top: '10rem', bottom: '10rem' }}
+              aria-hidden="true" 
+            />
+
+            <ol 
+              className="grid lg:grid-cols-3 gap-12 relative list-none" 
+              role="list"
+              aria-label="Gutachten-Prozess in drei Schritten"
+            >
               {/* Step 1 */}
-              <div className="text-center space-y-4">
+              <li 
+                className="text-center flex flex-col items-center space-y-5 focus-within:outline-none focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-4 rounded-lg p-4 -m-4 transition-all"
+                tabIndex={0}
+                role="listitem"
+                aria-labelledby="step-1-title"
+              >
                 <div className="relative inline-block">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center shadow-[var(--shadow-lg)]">
-                    <PhoneCall className="w-14 h-14 text-white" />
+                  <div className="process-step-icon">
+                    <PhoneCall className="w-12 h-12 text-white" aria-hidden="true" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                  <div className="process-step-badge" aria-label="Schritt 1">
                     1
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 id="step-1-title" className="heading-3 text-foreground mb-3">
                   Kontakt aufnehmen
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="body text-muted-foreground leading-relaxed max-w-sm mx-auto">
                   Rufen Sie uns an oder nutzen Sie unser Kontaktformular für eine erste Beratung.
                 </p>
-              </div>
+              </li>
 
               {/* Step 2 */}
-              <div className="text-center space-y-4">
+              <li 
+                className="text-center flex flex-col items-center space-y-5 focus-within:outline-none focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-4 rounded-lg p-4 -m-4 transition-all"
+                tabIndex={0}
+                role="listitem"
+                aria-labelledby="step-2-title"
+              >
                 <div className="relative inline-block">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center shadow-[var(--shadow-lg)]">
-                    <Car className="w-14 h-14 text-white" />
+                  <div className="process-step-icon">
+                    <Car className="w-12 h-12 text-white" aria-hidden="true" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                  <div className="process-step-badge" aria-label="Schritt 2">
                     2
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 id="step-2-title" className="heading-3 text-foreground mb-3">
                   Begutachtung vor Ort
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="body text-muted-foreground leading-relaxed max-w-sm mx-auto">
                   Wir kommen zu Ihnen und nehmen eine detaillierte Schadensbegutachtung vor.
                 </p>
-              </div>
+              </li>
 
               {/* Step 3 */}
-              <div className="text-center space-y-4">
+              <li 
+                className="text-center flex flex-col items-center space-y-5 focus-within:outline-none focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-4 rounded-lg p-4 -m-4 transition-all"
+                tabIndex={0}
+                role="listitem"
+                aria-labelledby="step-3-title"
+              >
                 <div className="relative inline-block">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-accent to-accent/80 rounded-full flex items-center justify-center shadow-[var(--shadow-lg)]">
-                    <FileCheck2 className="w-14 h-14 text-white" />
+                  <div className="process-step-icon">
+                    <FileCheck2 className="w-12 h-12 text-white" aria-hidden="true" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                  <div className="process-step-badge" aria-label="Schritt 3">
                     3
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 id="step-3-title" className="heading-3 text-foreground mb-3">
                   Gutachten erhalten
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="body text-muted-foreground leading-relaxed max-w-sm mx-auto">
                   Sie erhalten Ihr professionelles Gutachten zur Weiterleitung an die Versicherung.
                 </p>
-              </div>
-            </div>
+              </li>
+            </ol>
           </div>
 
-          {/* CTA */}
-          <div className="text-center mt-12 md:mt-16">
-            <Button 
-              variant="hero" 
-              size="lg"
-              className="text-base font-semibold"
-              aria-label="Jetzt Termin vereinbaren"
-            >
-              Jetzt Termin vereinbaren
-            </Button>
+          {/* Enhanced CTA */}
+          <div className="mt-16 md:mt-20">
+            <div className="max-w-3xl mx-auto text-center p-8 md:p-12 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl border border-accent/20">
+              <h3 className="heading-2 text-foreground mb-4">
+                Bereit für Ihr Gutachten?
+              </h3>
+              <p className="body-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Profitieren Sie von über 15 Jahren Erfahrung und unserem 24-Stunden-Service. 
+                Kostenlose Erstberatung – unverbindlich und kompetent.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
+                  aria-label="Jetzt unverbindlichen Termin vereinbaren"
+                >
+                  <Calendar className="w-5 h-5" aria-hidden="true" />
+                  Jetzt Termin vereinbaren
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-2"
+                  asChild
+                >
+                  <a href="#kontakt" aria-label="Mehr über unseren Service erfahren">
+                    Mehr erfahren
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
         </div>
