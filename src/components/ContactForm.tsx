@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
+import { Loader2 } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -151,13 +151,13 @@ export const ContactForm = () => {
 
         <Button 
           type="submit" 
-          variant="primary"
+          variant="hero"
           size="lg"
-          loading={isSubmitting}
-          loadingText="Wird gesendet..."
+          disabled={isSubmitting}
           className="w-full"
         >
-          Nachricht senden
+          {isSubmitting && <Loader2 className="animate-spin" />}
+          {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
         </Button>
       </form>
     </Form>
