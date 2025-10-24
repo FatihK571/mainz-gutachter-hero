@@ -664,9 +664,9 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 md:items-stretch">
               {/* Left: Contact Info & Map */}
-              <div className="flex flex-col gap-5 md:gap-6 lg:gap-8">
+              <div className="flex flex-col gap-5 md:gap-6 lg:gap-8 h-full">
                 <div>
                   <h3 className="heading-3 text-foreground mb-4 md:mb-6">
                     Kontaktinformationen
@@ -740,12 +740,14 @@ const Index = () => {
               </div>
 
               {/* Right: Contact Form */}
-              <div>
-                <div className="card">
+              <div className="flex flex-col h-full">
+                <div className="card h-full flex flex-col">
                   <h3 className="heading-3 text-foreground mb-6">
                     Nachricht senden
                   </h3>
-                  <ContactForm />
+                  <div className="flex-1">
+                    <ContactForm />
+                  </div>
                 </div>
               </div>
             </div>
