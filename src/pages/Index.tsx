@@ -169,7 +169,7 @@ const Index = () => {
       </section>
 
       {/* Credibility Section */}
-      <section id="warum-wir" className="section bg-gradient-to-br from-accent/5 via-background to-accent/3 border-t border-border/50" aria-labelledby="credibility-heading">
+      <section id="warum-wir" className="section bg-gradient-to-br from-accent/10 via-background to-accent/5 border-t border-accent/20" aria-labelledby="credibility-heading">
         <div className="section-container">
           <div className="section-content">
             <div className="section-header">
@@ -183,33 +183,43 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12">
-              <FeaturePoint 
-                icon={Award}
-                title="Langjährige Erfahrung"
-                description="Über 15 Jahre Expertise in Unfallgutachten und Fahrzeugbewertung"
-              />
-              <FeaturePoint 
-                icon={MapPin}
-                title="Mainz & Umgebung"
-                description="Vor-Ort-Service in der gesamten Region – schnell und unkompliziert"
-              />
-              <FeaturePoint 
-                icon={Scale}
-                title="Vollkommen unabhängig"
-                description="Neutral und ohne Werkstattbindung – nur Ihr Interesse zählt"
-              />
-              <FeaturePoint 
-                icon={Clock}
-                title="Schnelle Bearbeitung"
-                description="24-Stunden-Service und zügige Gutachtenerstellung"
-              />
-              <FeaturePoint 
-                icon={MessageCircle}
-                title="Persönlich erreichbar"
-                description="Direkter Kontakt zu Ihrem Sachverständigen – keine Warteschleifen"
-              />
-            </div>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12" role="list">
+              <li>
+                <FeaturePoint 
+                  icon={Award}
+                  title="Langjährige Erfahrung"
+                  description="Über 15 Jahre Expertise in Unfallgutachten und Fahrzeugbewertung"
+                />
+              </li>
+              <li>
+                <FeaturePoint 
+                  icon={MapPin}
+                  title="Mainz & Umgebung"
+                  description="Vor-Ort-Service in der gesamten Region – schnell und unkompliziert"
+                />
+              </li>
+              <li>
+                <FeaturePoint 
+                  icon={Scale}
+                  title="Vollkommen unabhängig"
+                  description="Neutral und ohne Werkstattbindung – nur Ihr Interesse zählt"
+                />
+              </li>
+              <li>
+                <FeaturePoint 
+                  icon={Clock}
+                  title="Schnelle Bearbeitung"
+                  description="24-Stunden-Service und zügige Gutachtenerstellung"
+                />
+              </li>
+              <li>
+                <FeaturePoint 
+                  icon={MessageCircle}
+                  title="Persönlich erreichbar"
+                  description="Direkter Kontakt zu Ihrem Sachverständigen – ohne Umwege"
+                />
+              </li>
+            </ul>
           </div>
         </div>
       </section>
