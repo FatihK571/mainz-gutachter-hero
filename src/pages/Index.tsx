@@ -95,7 +95,7 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Left Content */}
-              <div className="flex flex-col gap-6 md:gap-8 hero-content-animate">
+              <div className="flex flex-col gap-6 md:gap-8 hero-content-animate max-w-full overflow-hidden">
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-accent/10 rounded-full border-2 border-accent/30 shadow-[var(--shadow-sm)] w-fit">
                   <Award className="w-4 h-4 text-accent" aria-hidden="true" />
@@ -118,7 +118,7 @@ const Index = () => {
                 </p>
 
                 {/* Features */}
-                <ul className="flex flex-wrap gap-4 md:gap-6 pt-2" role="list">
+                <ul className="flex flex-wrap gap-3 md:gap-6 pt-2 max-w-full" role="list">
                   <li className="flex items-center gap-2 md:gap-2.5 text-foreground">
                     <Shield className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" aria-hidden="true" />
                     <span className="font-medium text-xs sm:text-sm md:text-base">Unabhängig & neutral</span>
