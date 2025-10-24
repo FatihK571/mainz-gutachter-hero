@@ -355,6 +355,11 @@ All colors MUST be HSL.
     @apply rotate-6;
   }
 
+  /* Biography text optimal width */
+  .bio-text {
+    max-width: 65ch;
+  }
+
   /* Stagger animation delays */
   .animate-delay-100 {
     animation-delay: 100ms;

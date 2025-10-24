@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Header } from "@/components/Header";
 import { Phone, Shield, FileCheck, ClipboardList, BadgeEuro, FileText, Award, MapPin, Scale, Clock, MessageCircle, PhoneCall, Car, FileCheck2, Mail, Facebook, Instagram, Linkedin, Calendar } from "lucide-react";
 import heroImage from "@/assets/hero-gutachter.jpg";
@@ -365,20 +366,22 @@ const Index = () => {
       <section id="ueber-uns" className="section bg-gradient-to-br from-primary-light/20 via-background to-primary-light/5 border-t border-border/50" aria-labelledby="about-heading">
         <div className="section-container">
           <div className="section-content">
-            <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
               {/* Image Left */}
               <div className="order-2 lg:order-1">
-                <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)] transition-shadow duration-300">
-                  <img 
-                    src={founderImage} 
-                    alt="Michael Schneider, Kfz-Sachverständiger und Geschäftsführer"
-                    className="w-full h-auto object-cover"
-                  />
+                <div className="max-w-md mx-auto lg:max-w-none relative rounded-2xl overflow-hidden border border-border/20 shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)] transition-shadow duration-300">
+                  <AspectRatio ratio={4 / 5} className="bg-muted">
+                    <img 
+                      src={founderImage} 
+                      alt="Michael Schneider, Kfz-Sachverständiger, in professioneller Arbeitsumgebung mit über 15 Jahren Erfahrung"
+                      className="w-full h-full object-cover"
+                    />
+                  </AspectRatio>
                 </div>
               </div>
 
               {/* Text Right */}
-              <div className="order-1 lg:order-2 space-y-6">
+              <div className="order-1 lg:order-2 flex flex-col gap-8">
                 <div>
                   <span className="text-sm font-semibold text-accent uppercase tracking-wide">
                     Über uns
@@ -388,17 +391,17 @@ const Index = () => {
                   </h2>
                 </div>
 
-                <div className="space-y-4">
+                <div className="flex flex-col gap-6">
                   <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-1">
+                    <h3 className="heading-3 text-foreground mb-2">
                       Michael Schneider
                     </h3>
-                    <p className="text-accent font-medium">
+                    <p className="text-accent font-medium mb-6">
                       Kfz-Sachverständiger & Geschäftsführer
                     </p>
                   </div>
 
-                  <p className="body text-muted-foreground">
+                  <p className="body text-muted-foreground bio-text leading-relaxed">
                     Seit über 15 Jahren bin ich als unabhängiger Kfz-Sachverständiger in Mainz und 
                     Umgebung tätig. Meine Expertise liegt in der präzisen und neutralen Begutachtung 
                     von Fahrzeugschäden. Mir ist es wichtig, dass Sie als Kunde im Mittelpunkt stehen – 
