@@ -244,12 +244,6 @@ const Index = () => {
               role="list"
               aria-label="Drei-Schritte-Prozess"
             >
-              {/* Desktop: Dot connectors between steps */}
-              <div className="hidden lg:flex absolute top-12 left-0 right-0 justify-center items-center gap-[33%] px-[16.5%]" aria-hidden="true">
-                <div className="w-3 h-3 rounded-full bg-accent/40" />
-                <div className="w-3 h-3 rounded-full bg-accent/40" />
-              </div>
-
               {/* Mobile: Connecting dots */}
               <div className="lg:hidden absolute left-1/2 -translate-x-1/2 top-0 bottom-0 flex flex-col justify-evenly items-center pointer-events-none" aria-hidden="true">
                 <div className="w-2 h-2 rounded-full bg-accent/40" />
