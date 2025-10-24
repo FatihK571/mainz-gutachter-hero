@@ -59,7 +59,7 @@ export const Header = () => {
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="flex h-14 md:h-16 items-center justify-between">
+          <div className="flex h-14 lg:h-16 items-center justify-between">
             {/* Logo */}
             <a 
               href="#" 
@@ -74,7 +74,7 @@ export const Header = () => {
             </a>
             
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-4 lg:gap-6" aria-label="Hauptnavigation">
+            <nav className="hidden lg:flex items-center gap-4 lg:gap-6" aria-label="Hauptnavigation">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.replace('#', '');
                 return (
@@ -98,7 +98,7 @@ export const Header = () => {
               <Button 
                 variant="hero" 
                 size="sm" 
-                className="hidden sm:inline-flex text-sm"
+                className="hidden lg:inline-flex text-sm"
                 asChild
               >
                 <a href="#kontakt" onClick={(e) => handleSmoothScroll(e, '#kontakt')}>
@@ -112,7 +112,7 @@ export const Header = () => {
                   <Button 
                     variant="ghost" 
                     size="icon" 
-                    className="md:hidden"
+                    className="lg:hidden"
                     aria-label="Menü öffnen"
                   >
                     <Menu className="h-5 w-5" />
