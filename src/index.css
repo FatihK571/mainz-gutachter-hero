@@ -69,8 +69,10 @@ All colors MUST be HSL.
     --card-padding-md: 2rem;
     
     /* Hero-specific spacing */
-    --hero-spacing-y: 6rem;
-    --hero-spacing-y-md: 8rem;
+    --hero-spacing-y: 3rem;
+    --hero-spacing-y-sm: 4rem;
+    --hero-spacing-y-md: 6rem;
+    --hero-spacing-y-lg: 8rem;
     --hero-element-gap: 2rem;
     --hero-feature-gap: 1.5rem;
 
@@ -129,7 +131,13 @@ All colors MUST be HSL.
 
 /* Textarea sizing utilities */
 .textarea-md {
-  min-height: 150px;
+  min-height: 120px;
+}
+
+@media (min-width: 640px) {
+  .textarea-md {
+    min-height: 150px;
+  }
 }
 
 .textarea-lg {
@@ -143,11 +151,18 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 5rem;
+    }
   }
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 }
 
@@ -203,19 +218,26 @@ All colors MUST be HSL.
   
   /* Hero-specific typography */
   .hero-headline {
-    @apply heading-1 tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight;
   }
   
   .hero-subheadline {
-    @apply text-xl md:text-2xl leading-relaxed text-muted-foreground/90 max-w-2xl;
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-muted-foreground/90;
+    max-width: 90%;
+  }
+
+  @media (min-width: 640px) {
+    .hero-subheadline {
+      max-width: 100%;
+    }
   }
   
   .hero-stat-value {
-    @apply text-3xl md:text-4xl font-bold text-primary tabular-nums;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-primary tabular-nums;
   }
   
   .hero-stat-label {
-    @apply text-xs md:text-sm text-muted-foreground font-medium;
+    @apply text-[10px] xs:text-xs sm:text-sm text-muted-foreground font-medium;
   }
   
   /* Card system */
@@ -330,20 +352,24 @@ All colors MUST be HSL.
   
   /* Process step component styles */
   .process-step-icon {
-    @apply w-24 h-24 bg-accent/15 rounded-full flex items-center justify-center;
+    @apply w-20 h-20 sm:w-24 sm:h-24 bg-accent/15 rounded-full flex items-center justify-center;
     transition: all 0.3s ease;
   }
   
   .process-step-icon:hover {
     @apply bg-accent/25 scale-[1.03];
   }
+
+  .process-step-icon svg {
+    @apply w-8 h-8 sm:w-10 sm:h-10;
+  }
   
   .process-step-badge {
-    @apply absolute -top-1.5 -right-1.5 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold text-base;
+    @apply absolute -top-1 -right-1 sm:-top-1.5 sm:-right-1.5 w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold text-sm sm:text-base;
   }
   
   .process-step-card {
-    @apply relative bg-card/50 border border-border/50 rounded-2xl p-8 transition-all duration-300;
+    @apply relative bg-card/50 border border-border/50 rounded-2xl p-4 sm:p-6 md:p-8 transition-all duration-300;
   }
   
   .process-step-card:hover {
@@ -461,6 +487,17 @@ All colors MUST be HSL.
   
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out both;
+  }
+
+  /* Disable hover transforms on touch devices */
+  @media (hover: none) {
+    .card-interactive:hover {
+      transform: none !important;
+    }
+    
+    .process-step-icon:hover {
+      transform: none !important;
+    }
   }
 }
 

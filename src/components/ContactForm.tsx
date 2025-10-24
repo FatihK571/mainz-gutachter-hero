@@ -128,7 +128,7 @@ export const ContactForm = () => {
               <FormItem>
                 <div className="flex items-center justify-between mb-2">
                   <FormLabel>Nachricht *</FormLabel>
-                  <span className="text-xs text-muted-foreground">
+                  <span className="text-[10px] xs:text-xs text-muted-foreground whitespace-nowrap">
                     {messageLength} / 1000
                   </span>
                 </div>

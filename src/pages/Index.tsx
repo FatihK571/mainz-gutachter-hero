@@ -68,15 +68,38 @@ const Index = () => {
       
       {/* Hero Section */}
       <section id="main-content" className="relative overflow-hidden" aria-labelledby="hero-heading">
-        <div className="section-container" style={{ paddingTop: 'var(--hero-spacing-y)', paddingBottom: 'var(--hero-spacing-y)' }}>
+        <div className="section-container" style={{ 
+          paddingTop: 'var(--hero-spacing-y)', 
+          paddingBottom: 'var(--hero-spacing-y)' 
+        }}>
+          <style>{`
+            @media (min-width: 640px) {
+              #main-content .section-container {
+                padding-top: var(--hero-spacing-y-sm);
+                padding-bottom: var(--hero-spacing-y-sm);
+              }
+            }
+            @media (min-width: 768px) {
+              #main-content .section-container {
+                padding-top: var(--hero-spacing-y-md);
+                padding-bottom: var(--hero-spacing-y-md);
+              }
+            }
+            @media (min-width: 1024px) {
+              #main-content .section-container {
+                padding-top: var(--hero-spacing-y-lg);
+                padding-bottom: var(--hero-spacing-y-lg);
+              }
+            }
+          `}</style>
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Left Content */}
-              <div className="flex flex-col gap-8 hero-content-animate">
+              <div className="flex flex-col gap-6 md:gap-8 hero-content-animate">
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full border-2 border-accent/30 shadow-[var(--shadow-sm)] w-fit">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-accent/10 rounded-full border-2 border-accent/30 shadow-[var(--shadow-sm)] w-fit">
                   <Award className="w-4 h-4 text-accent" aria-hidden="true" />
-                  <span className="text-sm font-bold text-accent tracking-wide">
+                  <span className="text-xs md:text-sm font-bold text-accent tracking-wide">
                     Kfz-Gutachter Mainz
                   </span>
                 </div>
@@ -95,49 +118,50 @@ const Index = () => {
                 </p>
 
                 {/* Features */}
-                <ul className="flex flex-wrap gap-6 pt-2" role="list">
-                  <li className="flex items-center gap-2.5 text-foreground">
-                    <Shield className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
-                    <span className="font-medium text-sm md:text-base">Unabhängig & neutral</span>
+                <ul className="flex flex-wrap gap-4 md:gap-6 pt-2" role="list">
+                  <li className="flex items-center gap-2 md:gap-2.5 text-foreground">
+                    <Shield className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span className="font-medium text-xs sm:text-sm md:text-base">Unabhängig & neutral</span>
                   </li>
-                  <li className="flex items-center gap-2.5 text-foreground">
-                    <FileCheck className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
-                    <span className="font-medium text-sm md:text-base">Gerichtlich anerkannt</span>
+                  <li className="flex items-center gap-2 md:gap-2.5 text-foreground">
+                    <FileCheck className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span className="font-medium text-xs sm:text-sm md:text-base">Gerichtlich anerkannt</span>
                   </li>
-                  <li className="flex items-center gap-2.5 text-foreground">
-                    <Clock className="w-5 h-5 text-accent flex-shrink-0" aria-hidden="true" />
-                    <span className="font-medium text-sm md:text-base">Schnelle Bearbeitung</span>
+                  <li className="flex items-center gap-2 md:gap-2.5 text-foreground">
+                    <Clock className="w-4 h-4 md:w-5 md:h-5 text-accent flex-shrink-0" aria-hidden="true" />
+                    <span className="font-medium text-xs sm:text-sm md:text-base">Schnelle Bearbeitung</span>
                   </li>
                 </ul>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <div className="flex flex-col xs:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
                   <Button 
                     variant="hero" 
                     size="lg"
-                    className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
+                    className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)] text-sm md:text-base"
                     aria-label="Kostenlose Beratung für Ihr Kfz-Gutachten anfordern"
                   >
-                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                    Jetzt Beratung anfordern
+                    <MessageCircle className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
+                    <span className="hidden xs:inline">Jetzt Beratung anfordern</span>
+                    <span className="xs:hidden">Beratung</span>
                   </Button>
                   <Button 
                     variant="outline" 
                     size="lg"
                     asChild
-                    className="border-2 group"
+                    className="border-2 group text-sm md:text-base"
                   >
                     <a href="tel:+4961231234567" aria-label="Rufen Sie uns kostenlos an: 06123 123 4567">
-                      <PhoneCall className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
+                      <PhoneCall className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                       Kostenlos anrufen
                     </a>
                   </Button>
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="pt-8 hero-stats-animate" role="region" aria-labelledby="trust-heading">
+                <div className="pt-6 md:pt-8 hero-stats-animate" role="region" aria-labelledby="trust-heading">
                   <h2 id="trust-heading" className="sr-only">Unsere Leistungsdaten</h2>
-                  <div className="grid grid-cols-3 gap-6 p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50">
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 p-4 sm:p-5 md:p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50">
                     <dl className="text-center">
                       <dt className="hero-stat-value">500+</dt>
                       <dd className="hero-stat-label">Gutachten pro Jahr</dd>
@@ -168,14 +192,14 @@ const Index = () => {
                 </div>
                 
                 {/* Floating Card */}
-                <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-xl shadow-[var(--shadow-lg)] border border-border max-w-xs hidden lg:block">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-accent" aria-hidden="true" />
+                <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-card p-4 sm:p-6 rounded-xl shadow-[var(--shadow-lg)] border border-border max-w-[200px] sm:max-w-xs hidden md:block">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                      <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-accent" aria-hidden="true" />
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground">100% Unabhängig</div>
-                      <div className="text-sm text-muted-foreground">Keine Werkstattbindung</div>
+                      <div className="font-semibold text-sm sm:text-base text-foreground">100% Unabhängig</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground">Keine Werkstattbindung</div>
                     </div>
                   </div>
                 </div>
@@ -198,7 +222,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <ServiceCard 
             icon={ClipboardList}
             title="Unfallgutachten"
@@ -418,7 +442,7 @@ const Index = () => {
       <section id="ueber-uns" className="section bg-gradient-to-br from-primary-light/20 via-background to-primary-light/5 border-t border-border/50" aria-labelledby="about-heading">
         <div className="section-container">
           <div className="section-content">
-            <div className="grid lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
               {/* Image Left */}
               <div className="order-2 lg:order-1">
                 <div className="max-w-md mx-auto lg:max-w-none relative rounded-2xl overflow-hidden border border-border/20 shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)] transition-shadow duration-300">
@@ -493,7 +517,7 @@ const Index = () => {
             </div>
 
             {/* Mobile/Tablet Carousel */}
-            <div className="lg:hidden">
+            <div className="md:hidden">
               <Carousel
                 opts={{
                   align: "start",
@@ -501,16 +525,27 @@ const Index = () => {
                 }}
                 className="w-full"
               >
-                <CarouselContent className="-ml-4">
+                <CarouselContent className="-ml-2 md:-ml-4">
                   {testimonials.map((testimonial, index) => (
-                    <CarouselItem key={index} className="pl-4 md:basis-1/2">
+                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
                       <TestimonialCard {...testimonial} />
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-0 -translate-x-1/2" />
-                <CarouselNext className="right-0 translate-x-1/2" />
+                <CarouselPrevious className="left-2" />
+                <CarouselNext className="right-2" />
               </Carousel>
+            </div>
+
+            {/* Tablet Grid */}
+            <div className="hidden md:grid md:grid-cols-2 lg:hidden gap-6">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard 
+                  key={index}
+                  {...testimonial}
+                  delay={index * 100}
+                />
+              ))}
             </div>
 
             {/* Desktop Grid */}
@@ -550,30 +585,30 @@ const Index = () => {
                 aria-label="Häufig gestellte Fragen zum Thema Kfz-Gutachten"
               >
                 {faqItems.map((item, index) => (
-                  <AccordionItem 
-                    key={item.id}
-                    value={item.id}
-                    className={cn(
-                      "bg-card rounded-lg border border-border px-6 shadow-sm hover:shadow-md transition-shadow",
-                      "animate-fade-in",
-                      index === 1 && "animate-delay-100",
-                      index === 2 && "animate-delay-200",
-                      index === 3 && "animate-delay-300",
-                      index === 4 && "animate-delay-400"
-                    )}
-                  >
-                    <AccordionTrigger 
-                      className="text-foreground hover:no-underline"
-                      aria-label={`Frage: ${item.question}`}
+                    <AccordionItem 
+                      key={item.id}
+                      value={item.id}
+                      className={cn(
+                        "bg-card rounded-lg border border-border px-4 sm:px-6 shadow-sm hover:shadow-md transition-shadow",
+                        "animate-fade-in",
+                        index === 1 && "animate-delay-100",
+                        index === 2 && "animate-delay-200",
+                        index === 3 && "animate-delay-300",
+                        index === 4 && "animate-delay-400"
+                      )}
                     >
-                      <span className="font-semibold text-base md:text-lg pr-4">
-                        {item.question}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground pt-2 pb-6 leading-relaxed">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
+                      <AccordionTrigger 
+                        className="text-foreground hover:no-underline py-5 sm:py-6 min-h-[60px]"
+                        aria-label={`Frage: ${item.question}`}
+                      >
+                        <span className="font-semibold text-sm sm:text-base md:text-lg pr-4 text-left">
+                          {item.question}
+                        </span>
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground pt-2 pb-5 sm:pb-6 leading-relaxed text-sm sm:text-base">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
                 ))}
               </Accordion>
             </div>
@@ -583,15 +618,15 @@ const Index = () => {
               <p className="body text-muted-foreground mb-6">
                 Haben Sie weitere Fragen? Wir beraten Sie gerne persönlich.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col xs:flex-row gap-3 md:gap-4 justify-center">
                 <Button 
                   variant="hero" 
                   size="lg"
                   asChild
-                  className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)]"
+                  className="shadow-[var(--shadow-lg)] hover:shadow-[var(--shadow-xl)] text-sm md:text-base"
                 >
                   <a href="#kontakt" aria-label="Zum Kontaktformular springen">
-                    <MessageCircle className="w-5 h-5" aria-hidden="true" />
+                    <MessageCircle className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
                     Jetzt Frage stellen
                   </a>
                 </Button>
@@ -599,11 +634,12 @@ const Index = () => {
                   variant="outline" 
                   size="lg"
                   asChild
-                  className="border-2"
+                  className="border-2 text-sm md:text-base"
                 >
                   <a href="tel:+4961311234567" aria-label="Telefonisch beraten lassen">
-                    <PhoneCall className="w-5 h-5" aria-hidden="true" />
-                    +49 (0) 6131 123 45 67
+                    <PhoneCall className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
+                    <span className="hidden xs:inline">+49 (0) 6131 123 45 67</span>
+                    <span className="xs:hidden">Anrufen</span>
                   </a>
                 </Button>
               </div>
@@ -625,53 +661,53 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
               {/* Left: Contact Info & Map */}
-              <div className="flex flex-col gap-6 lg:gap-8">
+              <div className="flex flex-col gap-5 md:gap-6 lg:gap-8">
                 <div>
-                  <h3 className="heading-3 text-foreground mb-6">
+                  <h3 className="heading-3 text-foreground mb-4 md:mb-6">
                     Kontaktinformationen
                   </h3>
                   
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-2 md:gap-3">
                     {/* Phone */}
                     <a 
                       href="tel:+4961311234567"
-                      className="flex items-start gap-4 p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
+                      className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
                       aria-label="Rufen Sie uns an unter +49 6131 123 45 67"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
-                        <Phone className="w-5 h-5 text-accent" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
+                        <Phone className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-foreground mb-1">Telefon</p>
-                        <p className="text-muted-foreground">+49 (0) 6131 123 45 67</p>
+                        <p className="font-semibold text-sm md:text-base text-foreground mb-1">Telefon</p>
+                        <p className="text-sm md:text-base text-muted-foreground">+49 (0) 6131 123 45 67</p>
                       </div>
                     </a>
 
                     {/* Email */}
                     <a 
                       href="mailto:info@kfz-gutachter-mainz.de"
-                      className="flex items-start gap-4 p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
+                      className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
                       aria-label="Senden Sie uns eine E-Mail an info@kfz-gutachter-mainz.de"
                     >
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
-                        <Mail className="w-5 h-5 text-accent" />
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
+                        <Mail className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-foreground mb-1">E-Mail</p>
-                        <p className="text-muted-foreground">info@kfz-gutachter-mainz.de</p>
+                        <p className="font-semibold text-sm md:text-base text-foreground mb-1">E-Mail</p>
+                        <p className="text-sm md:text-base text-muted-foreground break-all">info@kfz-gutachter-mainz.de</p>
                       </div>
                     </a>
 
                     {/* Address */}
-                    <div className="flex items-start gap-4 p-4 rounded-lg bg-card">
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-accent" />
+                    <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 rounded-lg bg-card">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-4 h-4 md:w-5 md:h-5 text-accent" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-foreground mb-1">Adresse</p>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="font-semibold text-sm md:text-base text-foreground mb-1">Adresse</p>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                           Musterstraße 123<br />
                           55122 Mainz
                         </p>
@@ -686,14 +722,14 @@ const Index = () => {
                   role="img"
                   aria-label="Karte von Mainz und Umgebung – wird in zukünftiger Version interaktiv"
                 >
-                  <div className="aspect-video flex flex-col items-center justify-center p-8 text-center">
-                    <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                      <MapPin className="w-8 h-8 text-accent" />
+                  <div className="aspect-video flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-center">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-accent/10 flex items-center justify-center mb-3 md:mb-4">
+                      <MapPin className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-accent" />
                     </div>
-                    <p className="font-semibold text-foreground mb-2">
+                    <p className="font-semibold text-sm sm:text-base text-foreground mb-2">
                       Standort Mainz
                     </p>
-                    <p className="text-sm text-muted-foreground max-w-xs">
+                    <p className="text-xs sm:text-sm text-muted-foreground max-w-xs">
                       Wir sind in Mainz und der gesamten Umgebung für Sie unterwegs
                     </p>
                   </div>
@@ -718,8 +754,8 @@ const Index = () => {
       <footer className="bg-primary text-primary-foreground relative" role="contentinfo" aria-label="Fußbereich mit Kontaktinformationen und Links">
         {/* Gradient transition before footer */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent"></div>
-        <div className="container mx-auto px-4 py-12 md:py-16">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 py-10 sm:py-12 md:py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
             {/* Column 1: Company Info */}
             <div className="flex flex-col gap-4">
               <h3 id="footer-company" className="heading-3 text-primary-foreground">
@@ -745,33 +781,33 @@ const Index = () => {
               </div>
               
               {/* Social Icons */}
-              <div className="flex gap-3 pt-2">
+              <div className="flex gap-3 sm:gap-4 pt-2">
                 <a 
                   href="https://facebook.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="w-10 h-10 sm:w-11 sm:h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                   aria-label="Besuchen Sie uns auf Facebook"
                 >
-                  <Facebook className="w-5 h-5" aria-hidden="true" />
+                  <Facebook className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
                 <a 
                   href="https://instagram.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="w-10 h-10 sm:w-11 sm:h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                   aria-label="Folgen Sie uns auf Instagram"
                 >
-                  <Instagram className="w-5 h-5" aria-hidden="true" />
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
                 <a 
                   href="https://linkedin.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-11 h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                  className="w-10 h-10 sm:w-11 sm:h-11 bg-primary-foreground/10 hover:bg-primary-foreground/20 rounded-lg flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
                   aria-label="Verbinden Sie sich mit uns auf LinkedIn"
                 >
-                  <Linkedin className="w-5 h-5" aria-hidden="true" />
+                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 </a>
               </div>
             </div>
