@@ -38,6 +38,7 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 
 export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [messageLength, setMessageLength] = useState(0);
   const { toast } = useToast();
 
   const form = useForm<ContactFormValues>({
@@ -75,59 +76,78 @@ export const ContactForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name *</FormLabel>
-              <FormControl>
-                <Input 
-                  placeholder="Ihr vollständiger Name" 
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
+        <div role="status" aria-live="polite" className="sr-only">
+          {isSubmitting && "Formular wird übermittelt"}
+        </div>
+        
+        <fieldset className="space-y-6 border-0 p-0 m-0">
+          <legend className="sr-only">Kontaktformular</legend>
+          
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name *</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="Ihr vollständiger Name"
+                    autoComplete="name"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>E-Mail *</FormLabel>
-              <FormControl>
-                <Input 
-                  type="email"
-                  placeholder="ihre.email@beispiel.de" 
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>E-Mail *</FormLabel>
+                <FormControl>
+                  <Input 
+                    type="email"
+                    placeholder="ihre.email@beispiel.de"
+                    autoComplete="email"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Nachricht *</FormLabel>
-              <FormControl>
-                <Textarea 
-                  placeholder="Beschreiben Sie kurz Ihr Anliegen..."
-                  className="min-h-[150px] resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <div className="flex items-center justify-between mb-2">
+                  <FormLabel>Nachricht *</FormLabel>
+                  <span className="text-xs text-muted-foreground">
+                    {messageLength} / 1000
+                  </span>
+                </div>
+                <FormControl>
+                  <Textarea 
+                    placeholder="Beschreiben Sie kurz Ihr Anliegen..."
+                    className="textarea-md resize-none"
+                    {...field}
+                    onChange={(e) => {
+                      field.onChange(e);
+                      setMessageLength(e.target.value.length);
+                    }}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </fieldset>
 
         <Button 
           type="submit" 

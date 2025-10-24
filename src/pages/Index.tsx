@@ -621,31 +621,30 @@ const Index = () => {
                 Kontakt & Standort
               </h2>
               <p className="body-lg text-muted-foreground max-w-2xl mx-auto">
-                Rufen Sie uns an oder senden Sie eine Nachricht – wir sind für Sie da 
-                und beraten Sie gerne zu Ihrem Anliegen.
+                Wir sind persönlich für Sie erreichbar. Rufen Sie an, schreiben Sie eine E-Mail oder nutzen Sie unser Kontaktformular.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               {/* Left: Contact Info & Map */}
-              <div className="space-y-8">
+              <div className="flex flex-col gap-6 lg:gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-6">
+                  <h3 className="heading-3 text-foreground mb-6">
                     Kontaktinformationen
                   </h3>
                   
-                  <div className="space-y-4">
+                  <div className="flex flex-col gap-3">
                     {/* Phone */}
                     <a 
                       href="tel:+4961311234567"
-                      className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors group focus-ring"
+                      className="flex items-start gap-4 p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
                       aria-label="Rufen Sie uns an unter +49 6131 123 45 67"
                     >
-                      <div className="icon-container-md icon-container-accent flex-shrink-0">
-                        <Phone className="w-6 h-6 text-accent" />
+                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
+                        <Phone className="w-5 h-5 text-accent" />
                       </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Telefon</p>
+                      <div className="flex-1">
+                        <p className="font-semibold text-foreground mb-1">Telefon</p>
                         <p className="text-muted-foreground">+49 (0) 6131 123 45 67</p>
                       </div>
                     </a>
@@ -653,26 +652,26 @@ const Index = () => {
                     {/* Email */}
                     <a 
                       href="mailto:info@kfz-gutachter-mainz.de"
-                      className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors group focus-ring"
+                      className="flex items-start gap-4 p-4 rounded-lg bg-card hover:bg-accent/5 transition-colors group focus-ring"
                       aria-label="Senden Sie uns eine E-Mail an info@kfz-gutachter-mainz.de"
                     >
-                      <div className="icon-container-md icon-container-accent flex-shrink-0">
-                        <Mail className="w-6 h-6 text-accent" />
+                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/15 transition-colors">
+                        <Mail className="w-5 h-5 text-accent" />
                       </div>
-                      <div>
-                        <p className="font-semibold text-foreground">E-Mail</p>
+                      <div className="flex-1">
+                        <p className="font-semibold text-foreground mb-1">E-Mail</p>
                         <p className="text-muted-foreground">info@kfz-gutachter-mainz.de</p>
                       </div>
                     </a>
 
                     {/* Address */}
-                    <div className="flex items-start gap-4 p-4 rounded-lg">
-                      <div className="icon-container-md icon-container-accent flex-shrink-0">
-                        <MapPin className="w-6 h-6 text-accent" />
+                    <div className="flex items-start gap-4 p-4 rounded-lg bg-card">
+                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-accent" />
                       </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Adresse</p>
-                        <p className="text-muted-foreground">
+                      <div className="flex-1">
+                        <p className="font-semibold text-foreground mb-1">Adresse</p>
+                        <p className="text-muted-foreground leading-relaxed">
                           Musterstraße 123<br />
                           55122 Mainz
                         </p>
@@ -682,17 +681,21 @@ const Index = () => {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="rounded-xl overflow-hidden border border-border bg-muted/30">
-                  <div className="aspect-video flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                      <MapPin className="w-12 h-12 text-muted-foreground mx-auto" />
-                      <p className="text-muted-foreground font-medium">
-                        Karten-Ansicht
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Mainz & Umgebung
-                      </p>
+                <div 
+                  className="rounded-xl overflow-hidden border-2 border-border/50 bg-gradient-to-br from-muted/50 to-muted/30 shadow-sm"
+                  role="img"
+                  aria-label="Karte von Mainz und Umgebung – wird in zukünftiger Version interaktiv"
+                >
+                  <div className="aspect-video flex flex-col items-center justify-center p-8 text-center">
+                    <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                      <MapPin className="w-8 h-8 text-accent" />
                     </div>
+                    <p className="font-semibold text-foreground mb-2">
+                      Standort Mainz
+                    </p>
+                    <p className="text-sm text-muted-foreground max-w-xs">
+                      Wir sind in Mainz und der gesamten Umgebung für Sie unterwegs
+                    </p>
                   </div>
                 </div>
               </div>

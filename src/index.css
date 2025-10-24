@@ -127,6 +127,15 @@ All colors MUST be HSL.
   }
 }
 
+/* Textarea sizing utilities */
+.textarea-md {
+  min-height: 150px;
+}
+
+.textarea-lg {
+  min-height: 200px;
+}
+
 @layer base {
   * {
     @apply border-border;
